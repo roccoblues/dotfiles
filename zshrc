@@ -34,7 +34,7 @@ if type brew &>/dev/null; then
 fi
 
 # Zsh autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Setup direnv
 eval "$(direnv hook zsh)"
