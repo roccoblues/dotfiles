@@ -15,5 +15,6 @@
         "formatting.gofumpt": true,
         "ui.semanticTokens": true
     },
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "editor.minimap.enabled": false
 }
