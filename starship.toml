@@ -1,0 +1,87 @@
+format = """$directory $character"""
+right_format = """
+$username\
+$hostname\
+$shlvl\
+$singularity\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$cobol\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$kubernetes\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$shell"""
+
+add_newline=true
+
+[kubernetes]
+disabled = false
+format = 'in [$symbol$context( \($namespace\))]($style) '
+
+[kubernetes.context_aliases]
+"arn:.*:cluster/(?P<cluster>[\\w-]+)" = "$cluster"
+
+[git_branch]
+only_attached = true
+
+[golang]
+disabled = true
+
+[aws]
+format = "on [$symbol$profile]($style) "
+
+[directory]
+truncate_to_repo = false
