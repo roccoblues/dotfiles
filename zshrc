@@ -18,7 +18,10 @@ autoload -Uz compinit
 compinit
 
 # Initialize homebrew
-eval "$($(brew --prefix)/bin/brew shellenv)"
+# (/usr/local for macOS Intel, /opt/homebrew for Apple Silicon and /home/linuxbrew/.linuxbrew for Linux
+[ -f "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -f "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
+[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Brew Autocompletion
 if type brew &>/dev/null; then
