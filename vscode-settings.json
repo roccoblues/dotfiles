@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.startupEditor": "none",
+    "files.insertFinalNewline": true,
+    "go.lintTool": "golangci-lint",
+    "window.nativeFullScreen": false,
+    "zenMode.fullScreen": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "explorer.confirmDelete": false,
+    "files.trimTrailingWhitespace": true,
+    "go.toolsManagement.autoUpdate": true,
+    "go.useLanguageServer": true,
+    "gopls": {
+        "formatting.gofumpt": true,
+        "ui.semanticTokens": true
+    },
+    "explorer.confirmDragAndDrop": false
+}
