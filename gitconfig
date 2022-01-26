@@ -23,7 +23,8 @@
 	diffFilter = diff-so-fancy --patch
 [diff-so-fancy]
 	markEmptyLines = false
+[credential]
+	helper = osxkeychain
 
 [include]
     path = .gitconfig.local
-
