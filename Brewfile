@@ -1,6 +1,8 @@
 brew "asdf"
+brew "diff-so-fancy"
 brew "direnv"
 brew "exa"
+brew "git-lfs"
 brew "git"
 brew "go"
 brew "htop"

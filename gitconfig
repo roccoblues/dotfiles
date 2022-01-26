@@ -1,0 +1,29 @@
+[user]
+	name = Dennis Schön
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	d =  diff
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[core]
+	excludesfile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[checkout]
+	defaultRemote = origin
+[init]
+	defaultBranch = main
+[color]
+	ui = true
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[diff-so-fancy]
+	markEmptyLines = false
+
+[include]
+    path = .gitconfig.local
+
