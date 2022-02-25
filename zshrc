@@ -14,6 +14,17 @@ setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
+# git aliases
+alias ga="git add"
+alias gc="git commit"
+alias gco="git checkout"
+alias gcp="git cherry-pick"
+alias gdiff="git diff"
+alias gl="git log"
+alias gp="git push"
+alias gs="git status"
+alias gt="git tag"
+
 # Enable zsh completions
 autoload -Uz compinit
 compinit
