@@ -24,6 +24,15 @@ alias gl="git log"
 alias gp="git push"
 alias gs="git status"
 alias gt="git tag"
+alias gm="git merge"
+
+# delete local branches who's remote ref is gone
+function gclean() {
+  git fetch --prune
+  for branch in $(git for-each-ref --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads); do
+    git branch -D $branch;
+  done
+}
 
 # Enable zsh completions
 autoload -Uz compinit
