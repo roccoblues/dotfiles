@@ -11,9 +11,6 @@ sync:
 
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
 
-	mkdir -p ~/.k9s
-	[ -f ~/.k9s/config.yml ] || ln -s $(PWD)/k9s.yml ~/.k9s/config.yml
-
 clean:
 	rm -f ~/.gemrc
 	rm -f ~/.asdfrc
@@ -21,6 +18,5 @@ clean:
 	rm -f ~/.gitconfig
 	rm -f ~/.config/starship.toml
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
-	rm -f ~/.k9s/config.yml
 
 .PHONY: all clean sync
