@@ -3,6 +3,7 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export PATH=$PATH:~/go/bin
 export K9SCONFIG=~/.k9s
+export AWS_DEFAULT_REGION=eu-central-1
 
 # zsh history
 export HISTFILE=~/.zsh_history
