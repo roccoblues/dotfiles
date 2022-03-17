@@ -17,6 +17,7 @@ Plug 'SirVer/ultisnips'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'arcticicestudio/nord-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 set title
@@ -39,6 +40,7 @@ colorscheme nord
 " Autocompletion
 	call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 	let g:deoplete#enable_at_startup = 1
+	autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
 
 " vim-go config:
 	let g:go_def_mode='gopls'
