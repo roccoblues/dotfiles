@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'SirVer/ultisnips'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 set title
@@ -30,6 +31,7 @@ set laststatus=0
 set noshowcmd
 set autowrite
 
+colorscheme nord
 
 " Use tab for snippet expansion
 	let g:UltiSnipsJumpForwardTrigger="<tab>"

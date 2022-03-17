@@ -1,7 +1,7 @@
 {
     "editor.fontFamily": "FiraCode Nerd Font",
     "editor.fontSize": 12,
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Nord",
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.startupEditor": "none",
     "files.insertFinalNewline": true,
