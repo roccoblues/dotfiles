@@ -12,6 +12,9 @@ sync:
 	mkdir -p ~/.config/nvim
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim  ~/.config/nvim/init.vim
 
+	mkdir -p ~/.newsboat
+	[ -f ~/.newsboat/config ] || ln -s $(PWD)/newsboat.config ~/.newsboat/config
+
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 clean:
@@ -21,6 +24,7 @@ clean:
 	rm -f ~/.gitconfig
 	rm -f ~/.config/starship.toml
 	rm -f ~/.config/nvim/init.vim
+	rm -f ~/.newsboat/config
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 
 .PHONY: all clean sync
