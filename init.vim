@@ -15,8 +15,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'SirVer/ultisnips'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'neovim/nvim-lspconfig'
 Plug 'arcticicestudio/nord-vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
@@ -34,36 +33,31 @@ set noruler
 set laststatus=0
 set noshowcmd
 set autowrite
+set updatetime=100
 
 colorscheme nord
 
-" open telescope with ,f
-	nnoremap <leader>ff <cmd>Telescope find_files<cr>
-	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
+
+"  Format on save
+	autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+
+" Enable the list of buffers
+	let g:airline#extensions#tabline#enabled = 1
+
+" Cycle through buffers
+	nnoremap <Tab> :bnext<CR>
+	nnoremap <S-Tab> :bprevious<CR>
+
+" open telescope with ,ff
+	nnoremap <leader>ff :Telescope find_files<CR>
+	nnoremap <leader>fg :Telescope live_grep<CR>
 
 " Use tab for snippet expansion
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 " Autocompletion
-	call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
-	let g:deoplete#enable_at_startup = 1
 	autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
-
-" vim-go config:
-	let g:go_def_mode='gopls'
-	let g:go_info_mode='gopls'
-	let g:go_diagnostics_enabled = 1
-	let g:go_metalinter_command = "golangci-lint"
-	let g:go_doc_popup_window = 1
-	let g:go_highlight_types = 1
-	let g:go_highlight_fields = 1
-	let g:go_highlight_functions = 1
-	let g:go_highlight_function_calls = 1
-	let g:go_highlight_operators = 1
-	let g:go_highlight_extra_types = 1
-	let g:go_highlight_build_constraints = 1
-	let g:go_highlight_generate_tags = 1
-	let g:go_highlight_format_strings = 1
 
 " Some basics:
 	nnoremap c "_c
@@ -117,26 +111,51 @@ colorscheme nord
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
   	autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
 
-" Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
-if &diff
-    highlight! link DiffText MatchParen
-endif
+lua <<EOF
+	-- Mappings.
+	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+	local opts = { noremap=true, silent=true }
+	vim.api.nvim_set_keymap('n', ',e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+	vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+	vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+	vim.api.nvim_set_keymap('n', ',q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
-" Function for toggling the bottom statusbar:
-let s:hidden_all = 0
-function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
-        set noshowmode
-        set noruler
-        set laststatus=0
-        set noshowcmd
-    else
-        let s:hidden_all = 0
-        set showmode
-        set ruler
-        set laststatus=2
-        set showcmd
-    endif
-endfunction
-nnoremap <leader>h :call ToggleHiddenAll()<CR>
+	-- Use an on_attach function to only map the following keys
+	-- after the language server attaches to the current buffer
+	local on_attach = function(client, bufnr)
+	  -- Enable completion triggered by <c-x><c-o>
+	  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+	  -- Mappings.
+	  -- See `:help vim.lsp.*` for documentation on any of the below functions
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', ',wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', ',wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', ',wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', ',D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', ',rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', ',ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+	  vim.api.nvim_buf_set_keymap(bufnr, 'n', ',f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+	end
+
+	local lspconfig = require('lspconfig')
+
+	-- Use a loop to conveniently call 'setup' on multiple servers and
+	-- map buffer local keybindings when the language server attaches
+	local servers = { 'gopls' }
+	for _, lsp in pairs(servers) do
+	  lspconfig[lsp].setup {
+	    on_attach = on_attach,
+	    capabilities = capabilities,
+	    flags = {
+	      -- This will be the default in neovim 0.7+
+	      debounce_text_changes = 150,
+	    }
+	  }
+	end
+EOF
