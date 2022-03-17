@@ -34,6 +34,10 @@ set autowrite
 
 colorscheme nord
 
+" open fzf with ,f
+	nnoremap <silent> <leader>f :FZF<cr>
+	nnoremap <silent> <leader>F :FZF ~<cr>
+
 " Use tab for snippet expansion
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
 
