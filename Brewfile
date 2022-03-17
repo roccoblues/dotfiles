@@ -20,6 +20,8 @@ brew "newsboat"
 brew "mpv"
 brew "youtube-dl"
 brew "fzf"
+brew "ripgrep"
+brew "fd"
 
 cask "rectangle"
 cask "iterm2"

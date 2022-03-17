@@ -17,7 +17,9 @@ Plug 'SirVer/ultisnips'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'arcticicestudio/nord-vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 set title
@@ -34,9 +36,9 @@ set autowrite
 
 colorscheme nord
 
-" open fzf with ,f
-	nnoremap <silent> <leader>f :FZF<cr>
-	nnoremap <silent> <leader>F :FZF ~<cr>
+" open telescope with ,f
+	nnoremap <leader>ff <cmd>Telescope find_files<cr>
+	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 " Use tab for snippet expansion
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -49,6 +51,8 @@ colorscheme nord
 " vim-go config:
 	let g:go_def_mode='gopls'
 	let g:go_info_mode='gopls'
+	let g:go_diagnostics_enabled = 1
+	let g:go_metalinter_command = "golangci-lint"
 	let g:go_doc_popup_window = 1
 	let g:go_highlight_types = 1
 	let g:go_highlight_fields = 1
@@ -58,6 +62,7 @@ colorscheme nord
 	let g:go_highlight_extra_types = 1
 	let g:go_highlight_build_constraints = 1
 	let g:go_highlight_generate_tags = 1
+	let g:go_highlight_format_strings = 1
 
 " Some basics:
 	nnoremap c "_c
