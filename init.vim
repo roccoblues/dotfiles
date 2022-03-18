@@ -20,6 +20,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
 call plug#end()
 
 set title
@@ -39,6 +41,14 @@ colorscheme nord
 
 let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 
+"  Trouble
+	nnoremap <leader>xx <cmd>TroubleToggle<cr>
+	nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
+	nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+	nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+	nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+	nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
 "  Format on save
 	autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
 
@@ -52,6 +62,7 @@ let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 " open telescope with ,ff
 	nnoremap <leader>ff :Telescope find_files<CR>
 	nnoremap <leader>fg :Telescope live_grep<CR>
+	nnoremap <leader>ls :Telescope lsp_document_symbols<CR>
 
 " Use tab for snippet expansion
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -158,4 +169,6 @@ lua <<EOF
 	    }
 	  }
 	end
+
+	require("trouble").setup{}
 EOF
