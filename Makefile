@@ -11,6 +11,9 @@ sync:
 
 	mkdir -p ~/.config/nvim
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim  ~/.config/nvim/init.vim
+	mkdir -p ~/.config/nvim/ulti-snippets
+	[ -f ~/.config/nvim/ulti-snippets/go.snippets ] || ln -s $(PWD)/go.snippets  ~/.config/nvim/ulti-snippets/go.snippets
+
 
 	mkdir -p ~/.newsboat
 	[ -f ~/.newsboat/config ] || ln -s $(PWD)/newsboat.config ~/.newsboat/config
@@ -24,6 +27,7 @@ clean:
 	rm -f ~/.gitconfig
 	rm -f ~/.config/starship.toml
 	rm -f ~/.config/nvim/init.vim
+	rm -f ~/.config/nvim/ulti-snippets/go.snippets
 	rm -f ~/.newsboat/config
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 
