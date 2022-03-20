@@ -20,6 +20,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'arcticicestudio/nord-vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
@@ -62,7 +63,7 @@ let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 	nnoremap <S-Tab> :bprevious<CR>
 
 " open telescope with ,ff
-	nnoremap <leader>ff :Telescope find_files<CR>
+	nnoremap <leader>ff :Telescope find_files hidden=true no_ignore=true<CR>
 	nnoremap <leader>fg :Telescope live_grep<CR>
 	nnoremap <leader>ls :Telescope lsp_document_symbols<CR>
 
@@ -187,6 +188,15 @@ lua <<EOF
 	end
 
 
+	require('telescope').setup {
+		defaults = {
+			file_ignore_patterns = {
+				".git/.*"
+			}
+		},
+		extensions = { fzf = {} }
+	}
+	require('telescope').load_extension('fzf')
 	require("trouble").setup{}
 EOF
 
