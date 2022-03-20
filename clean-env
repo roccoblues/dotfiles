@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 for folder in $(ls -1 -d */)
 do
 	folder=$(echo $folder | sed 's/\/$//')
