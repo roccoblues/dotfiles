@@ -7,6 +7,7 @@ export AWS_DEFAULT_REGION=eu-central-1
 export EDITOR=nvim
 
 alias vim=nvim
+bindkey -e
 
 # zsh history
 export HISTFILE=~/.zsh_history
