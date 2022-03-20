@@ -23,6 +23,7 @@ brew "fzf"
 brew "ripgrep"
 brew "fd"
 brew "tmux"
+brew "stow"
 
 cask "rectangle"
 cask "iterm2"
