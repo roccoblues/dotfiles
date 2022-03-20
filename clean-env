@@ -1,7 +1,0 @@
-#!/bin/sh
-for folder in $(ls -1 -d */)
-do
-	folder=$(echo $folder | sed 's/\/$//')
-	echo "Removing $folder"
-	stow -D $folder
-done
