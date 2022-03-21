@@ -24,6 +24,7 @@ brew "ripgrep"
 brew "fd"
 brew "tmux"
 brew "stow"
+brew "bat"
 
 cask "rectangle"
 cask "iterm2"
