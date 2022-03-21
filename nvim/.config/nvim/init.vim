@@ -17,6 +17,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'SirVer/ultisnips'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'arcticicestudio/nord-vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -202,6 +203,11 @@ lua <<EOF
 		extensions = { fzf = {} }
 	}
 	require('telescope').load_extension('fzf')
+
+	require'nvim-treesitter.configs'.setup {
+		ensure_installed = "all",
+		highlight = { enable = true },
+	}
 EOF
 
 autocmd BufWritePre *.go lua OrgImports(1000)
