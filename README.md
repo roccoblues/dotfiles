@@ -12,6 +12,6 @@ cd ~/.dotfiles
 # install all brew dependencies
 brew bundle
 
-# symlink dotfiles to the appropriate places
-./install
+# symlink dotfiles to the right places
+make
 ```
