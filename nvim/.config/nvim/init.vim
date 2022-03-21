@@ -18,12 +18,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'SirVer/ultisnips'
 Plug 'neovim/nvim-lspconfig'
 Plug 'arcticicestudio/nord-vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'folke/trouble.nvim'
 Plug 'tpope/vim-obsession'
 call plug#end()
 
@@ -44,14 +42,6 @@ colorscheme nord
 
 let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 
-"  Trouble
-	nnoremap <leader>xx <cmd>TroubleToggle<cr>
-	nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
-	nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
-	nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
-	nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
-	nnoremap gR <cmd>TroubleToggle lsp_references<cr>
-
 "  Format on save
 	autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
 
@@ -66,6 +56,9 @@ let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 	nnoremap <leader>ff :Telescope find_files hidden=true no_ignore=true<CR>
 	nnoremap <leader>fg :Telescope live_grep<CR>
 	nnoremap <leader>ls :Telescope lsp_document_symbols<CR>
+	nnoremap <leader>lr :Telescope lsp_references<CR>
+	nnoremap <leader>li :Telescope lsp_implementations<CR>
+	nnoremap <leader>le :Telescope diagnostics<CR>
 
 " Use tab for snippet expansion
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -145,15 +138,15 @@ lua <<EOF
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-		vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+		-- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+		-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', ',wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', ',wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', ',wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', ',D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', ',rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', ',ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-		vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+		-- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', ',f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 	end
 
@@ -190,6 +183,7 @@ lua <<EOF
 
 	require('telescope').setup {
 		defaults = {
+			layout_strategy = 'vertical',
 			file_ignore_patterns = {
 				".git/.*"
 			},
@@ -208,7 +202,6 @@ lua <<EOF
 		extensions = { fzf = {} }
 	}
 	require('telescope').load_extension('fzf')
-	require("trouble").setup{}
 EOF
 
 autocmd BufWritePre *.go lua OrgImports(1000)
