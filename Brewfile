@@ -34,4 +34,4 @@ cask "tunnelblick"
 cask "alacritty"
 
 tap "homebrew/cask-fonts"
-cask "font-fira-code-nerd-font"
+cask "font-hack-nerd-font"

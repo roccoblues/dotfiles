@@ -3,7 +3,7 @@ window:
   startup_mode: SimpleFullscreen
 font:
   normal:
-    family: FiraCode Nerd Font Mono
+    family: Hack Nerd Font
   size: 12
 draw_bold_text_with_bright_colors: true
 dynamic_title: true
