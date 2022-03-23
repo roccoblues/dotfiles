@@ -17,6 +17,10 @@ shell:
   program: /bin/zsh
   args:
     - --login
+key_bindings:
+  ###  Work around for <c-q> on macOS
+  ###    see: https://github.com/alacritty/alacritty/issues/1359
+  - { key: Q,        mods: Control, chars: "\x11"                            }
 colors:
   primary:
     background: '#2e3440'
