@@ -123,3 +123,7 @@ let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 	autocmd BufWritePre * %s/\n\+\%$//e
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
 	autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
+
+" Quickfix list navigation
+	nnoremap <C-n> :cnext<CR>zz
+	nnoremap <C-p> :cprev<CR>zz
