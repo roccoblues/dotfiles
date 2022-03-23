@@ -38,20 +38,29 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", ",f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local lspconfig = require("lspconfig")
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = {"gopls"}
-for _, lsp in pairs(servers) do
-    lspconfig[lsp].setup {
-        on_attach = on_attach,
-        flags = {
-            -- This will be the default in neovim 0.7+
-            debounce_text_changes = 150
+lspconfig.gopls.setup {
+    cmd = {"gopls"},
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+                nilness = true,
+                unusedparams = true,
+                shadow = true,
+                unusedwrite = true,
+                useany = true
+            },
+            staticcheck = true
         }
-    }
-end
+    },
+    on_attach = on_attach
+}
 
 function OrgImports(wait_ms)
     local params = vim.lsp.util.make_range_params()
