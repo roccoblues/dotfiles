@@ -13,5 +13,5 @@ cd ~/.dotfiles
 brew bundle
 
 # symlink dotfiles to the right places
-make
+./install.sh
 ```
