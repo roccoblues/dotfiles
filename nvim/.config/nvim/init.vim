@@ -127,3 +127,6 @@ let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 " Quickfix list navigation
 	nnoremap <C-n> :cnext<CR>zz
 	nnoremap <C-p> :cprev<CR>zz
+
+" Reset cursor shape
+	au VimLeave * set guicursor=a:ver10-blinkon0
