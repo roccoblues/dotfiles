@@ -25,6 +25,7 @@ brew "fd"
 brew "tmux"
 brew "stow"
 brew "bat"
+brew "xh"
 
 cask "rectangle"
 cask "iterm2"
