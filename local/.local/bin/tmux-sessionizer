@@ -1,25 +1,33 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -e -u -o pipefail
 
 if [[ $# > 0 ]]; then
-    selected=$1
+    path=$1
+    cmd=$2
 else
-    selected=$(find ~/projects -mindepth 1 -maxdepth 1 -type d | cat - <(echo -e "$HOME/.dotfiles\n$HOME/Downloads") | fzf)
+    path=$(find ~/projects -mindepth 1 -maxdepth 1 -type d | cat - <(echo -e "$HOME/.dotfiles\n$HOME/Downloads") | fzf)
+    cmd=""
 fi
 
-if [[ -z $selected ]]; then
+if [[ -z $path ]]; then
     exit 0
 fi
 
-selected_name=$(basename "$selected" | tr . _)
+if [[ -z $cmd ]]; then
+    name=$(basename "${path}" | tr . _)
+else
+    name=$cmd
+fi
+
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
+    tmux new-session -s $name -c $path $cmd
     exit 0
 fi
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
+if ! tmux has-session -t=$name 2> /dev/null; then
+    tmux new-session -ds $name -c $path $cmd
 fi
 
-tmux switch-client -t $selected_name
+tmux switch-client -t $name
