@@ -130,3 +130,21 @@ let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 
 " Reset cursor shape
 	au VimLeave * set guicursor=a:ver10-blinkon0
+
+" Behave vim
+	nnoremap Y y$
+
+" Keeping it centered
+	nnoremap n nzzzv
+	nnoremap N nzzzv
+	nnoremap J mzJ`z
+
+" Undo break points
+	inoremap , ,<c-g>u
+	inoremap . .<c-g>u
+	inoremap ! !<c-g>u
+	inoremap ? ?<c-g>u
+
+" Move text
+	vnoremap J :m '>+1<CR>gv=gv
+	vnoremap K :m '<-2<CR>gv=gv
