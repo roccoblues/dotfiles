@@ -39,6 +39,9 @@ set laststatus=0
 set noshowcmd
 set autowrite
 set updatetime=100
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 colorscheme nord
 
