@@ -73,3 +73,6 @@ eval "$(direnv hook zsh)"
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 eval "$(starship init zsh)"
+
+# Use fzf for autocompletion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
