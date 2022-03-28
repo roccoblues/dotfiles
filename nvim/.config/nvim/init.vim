@@ -151,3 +151,6 @@ let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 " Move text
 	vnoremap J :m '>+1<CR>gv=gv
 	vnoremap K :m '<-2<CR>gv=gv
+
+" Launch tmux-sessionizer from vim
+    nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>

@@ -2,6 +2,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export PATH=$PATH:~/go/bin
+export PATH=~/.local/bin/:$PATH
 export K9SCONFIG=~/.k9s
 export AWS_DEFAULT_REGION=eu-central-1
 export EDITOR=nvim
@@ -76,3 +77,5 @@ eval "$(starship init zsh)"
 
 # Use fzf for autocompletion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey -s ^f "tmux-sessionizer\n"
