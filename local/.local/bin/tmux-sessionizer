@@ -1,25 +1,24 @@
 #!/bin/bash
-set -e -u -o pipefail
+set -e -o pipefail
 
 if [[ $# > 0 ]]; then
     path=$1
     cmd=$2
 else
     path=$(find ~/projects -mindepth 1 -maxdepth 1 -type d | cat - <(echo -e "$HOME/.dotfiles\n$HOME/Downloads") | fzf)
-    cmd=""
 fi
 
 if [[ -z $path ]]; then
     exit 0
 fi
 
-if [[ -z $cmd ]]; then
-    name=$(basename "${path}" | tr . _)
-else
+if [[ -n $cmd ]]; then
     name=$cmd
+else
+    name=$(basename "${path}" | tr . _)
 fi
 
-tmux_running=$(pgrep tmux)
+tmux_running=$(pgrep tmux || echo '')
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $name -c $path $cmd
