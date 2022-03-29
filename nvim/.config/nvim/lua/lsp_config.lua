@@ -1,10 +1,10 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = {noremap = true, silent = true}
-vim.api.nvim_set_keymap("n", ",e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-vim.api.nvim_set_keymap("n", ",k", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-vim.api.nvim_set_keymap("n", ",j", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-vim.api.nvim_set_keymap("n", ",q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+vim.api.nvim_set_keymap("n", " e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+vim.api.nvim_set_keymap("n", " k", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+vim.api.nvim_set_keymap("n", " j", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+vim.api.nvim_set_keymap("n", " q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -76,28 +76,3 @@ function OrgImports(wait_ms)
         end
     end
 end
-
-require("telescope").setup {
-    defaults = {
-        layout_strategy = "vertical",
-        file_ignore_patterns = {
-            ".git/.*"
-        },
-        vimgrep_arguments = {
-            "rg",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-            "--hidden"
-        }
-    },
-    extensions = {fzf = {}}
-}
-require("telescope").load_extension("fzf")
-
-require "nvim-treesitter.configs".setup {
-    highlight = {enable = true}
-}
