@@ -183,7 +183,7 @@ defaults write com.apple.dock autohide -bool true
 echo "  › Don't animate opening applications from the Dock"
 defaults write com.apple.dock launchanim -bool false
 
-echo "  ›  Don't show recently used applications in the Dock"
+echo "  › Don't show recently used applications in the Dock"
 defaults write com.Apple.Dock show-recents -bool false
 
 #############################
