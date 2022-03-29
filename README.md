@@ -9,6 +9,9 @@ My personal dotfiles.
 git clone https://github.com/roccoblues/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
+# set sane macOS defaults
+./set-macos-defaults.sh
+
 # install all brew dependencies
 brew bundle
 
