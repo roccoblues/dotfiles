@@ -12,7 +12,7 @@ cd ~/.dotfiles
 # set sane macOS defaults
 ./set-macos-defaults.sh
 
-# install all brew dependencies
+# install apps
 brew bundle
 
 # symlink dotfiles to the right places
