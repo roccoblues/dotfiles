@@ -22,51 +22,39 @@ key_bindings:
   ###    see: https://github.com/alacritty/alacritty/issues/1359
   - { key: Q, mods: Control, chars: "\x11"                            }
   - { key: F, mods: Command|Control, action: ToggleSimpleFullscreen      }
+# Base16 Default Dark - alacritty color config
+# Chris Kempson (http://chriskempson.com)
 colors:
+  # Default colors
   primary:
-    background: '#2e3440'
-    foreground: '#d8dee9'
-    dim_foreground: '#a5abb6'
+    background: '0x181818'
+    foreground: '0xd8d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
-  vi_mode_cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
-  selection:
-    text: CellForeground
-    background: '#4c566a'
-  search:
-    matches:
-      foreground: CellBackground
-      background: '#88c0d0'
-    bar:
-      background: '#434c5e'
-      foreground: '#d8dee9'
+    text: '0x181818'
+    cursor: '0xd8d8d8'
+
+  # Normal colors
   normal:
-    black: '#3b4252'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#88c0d0'
-    white: '#e5e9f0'
+    black:   '0x181818'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xd8d8d8'
+
+  # Bright colors
   bright:
-    black: '#4c566a'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#8fbcbb'
-    white: '#eceff4'
-  dim:
-    black: '#373e4d'
-    red: '#94545d'
-    green: '#809575'
-    yellow: '#b29e75'
-    blue: '#68809a'
-    magenta: '#8c738c'
-    cyan: '#6d96a5'
-    white: '#aeb3bb'
+    black:   '0x585858'
+    red:     '0xdc9656'
+    green:   '0x282828'
+    yellow:  '0x383838'
+    blue:    '0xb8b8b8'
+    magenta: '0xe8e8e8'
+    cyan:    '0xa16946'
+    white:   '0xf8f8f8'
+
+draw_bold_text_with_bright_colors: false

@@ -15,11 +15,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips'
 Plug 'neovim/nvim-lspconfig'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'arcticicestudio/nord-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
@@ -43,7 +44,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-colorscheme nord
+colorscheme base16-default-dark
+highlight Normal ctermfg=7 ctermbg=None guifg=#d8d8d8 guibg=#181818
+let g:airline_theme='base16_default_dark'
 
 lua require("lsp_config")
 
