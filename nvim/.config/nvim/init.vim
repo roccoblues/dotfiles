@@ -46,6 +46,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
@@ -93,7 +94,7 @@ nnoremap <leader>le :Telescope diagnostics<CR>
 " Perform dot commands over visual blocks:
 vnoremap . :normal .<CR>
 
-map <leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeFind<CR>
 map <leader>g :Git<CR>
 
 " Shortcutting split navigation, saving a keypress:
