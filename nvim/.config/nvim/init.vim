@@ -51,7 +51,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'SirVer/ultisnips'
 Plug 'neovim/nvim-lspconfig'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -70,9 +69,6 @@ let mapleader = " "
 
 let g:airline_theme='base16_default_dark'
 let g:airline#extensions#tabline#enabled = 1
-
-let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
-let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.git$']
