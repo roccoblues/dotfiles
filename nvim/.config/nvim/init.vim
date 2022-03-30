@@ -60,6 +60,11 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-obsession'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
 call plug#end()
 
 colorscheme base16-default-dark
@@ -140,10 +145,6 @@ augroup FOO_BAR
     " Format on save
     autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync()
     autocmd BufWritePre *.go lua OrgImports(1000)
-
-    " Enable completion triggered by <c-x><c-o>
-    autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc
-    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
 
     " Ensure files are read as what I want:
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
