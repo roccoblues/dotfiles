@@ -27,6 +27,7 @@ brew "stow"
 brew "bat"
 brew "xh"
 brew "tldr"
+brew "wget"
 
 cask "rectangle"
 cask "iterm2"
