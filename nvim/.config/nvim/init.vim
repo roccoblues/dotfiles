@@ -63,24 +63,19 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-obsession'
 call plug#end()
 
-let mapleader = " "
-
-lua require("lsp_config")
-lua require("telescope_config")
-lua require("treesitter_config")
-
 colorscheme base16-default-dark
 highlight Normal ctermfg=7 ctermbg=None guifg=#d8d8d8 guibg=#181818
 
+let mapleader = " "
+
 let g:airline_theme='base16_default_dark'
+let g:airline#extensions#tabline#enabled = 1
 
 let g:UltiSnipsSnippetDirectories=["ulti-snippets"]
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
 let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.git$']
 
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
