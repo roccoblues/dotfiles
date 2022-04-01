@@ -66,6 +66,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 colorscheme base16-default-dark
@@ -78,6 +79,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.git$']
+
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
 
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
@@ -96,12 +100,6 @@ vnoremap . :normal .<CR>
 
 map <leader>n :NERDTreeFind<CR>
 map <leader>g :Git<CR>
-
-" Shortcutting split navigation, saving a keypress:
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 
 nnoremap <silent> Q <nop>
 
