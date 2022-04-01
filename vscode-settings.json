@@ -1,7 +1,6 @@
 {
     "editor.fontFamily": "Hack Nerd Font",
     "editor.fontSize": 12,
-    "workbench.colorTheme": "Nord",
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.startupEditor": "none",
     "files.insertFinalNewline": true,
@@ -28,4 +27,6 @@
     },
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
+    "editor.guides.indentation": false,
+    "workbench.colorTheme": "Base16 Default Dark",
 }
