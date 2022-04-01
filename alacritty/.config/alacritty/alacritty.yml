@@ -20,8 +20,9 @@ shell:
 key_bindings:
   ###  Work around for <c-q> on macOS
   ###    see: https://github.com/alacritty/alacritty/issues/1359
-  - { key: Q, mods: Control, chars: "\x11"                            }
-  - { key: F, mods: Command|Control, action: ToggleSimpleFullscreen      }
+  - { key: Q, mods: Control, chars: "\x11"                          }
+  - { key: F, mods: Command|Control, action: ToggleSimpleFullscreen }
+  - { key: K, mods: Command, chars: "\x01b" }
 # Base16 Default Dark - alacritty color config
 # Chris Kempson (http://chriskempson.com)
 colors:
