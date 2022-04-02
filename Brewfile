@@ -1,5 +1,5 @@
 brew "asdf"
-brew "diff-so-fancy"
+brew "git-delta"
 brew "direnv"
 brew "exa"
 brew "git-lfs"

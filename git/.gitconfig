@@ -12,22 +12,28 @@
 	smudge = git-lfs smudge -- %f
 [core]
 	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    theme = base16
+    line-numbers = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
 [checkout]
 	defaultRemote = origin
 [init]
 	defaultBranch = main
 [color]
 	ui = true
-[interactive]
-	diffFilter = diff-so-fancy --patch
-[diff-so-fancy]
-	markEmptyLines = false
 [credential]
 	helper = osxkeychain
 [include]
     path = .gitconfig.local
 [alias]
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [pull]
 	rebase = false
