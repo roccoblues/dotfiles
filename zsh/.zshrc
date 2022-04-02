@@ -95,4 +95,7 @@ eval "$(starship init zsh)"
 # Use fzf for autocompletion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Enable Vi mode
+source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 bindkey -s ^f "tmux-sessionizer\n"
