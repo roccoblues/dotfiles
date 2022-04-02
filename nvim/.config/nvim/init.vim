@@ -10,7 +10,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 set noshowmode
 set noruler
-set laststatus=0
+set laststatus=2
 set noshowcmd
 set autowrite
 set updatetime=100
@@ -36,10 +36,10 @@ set splitbelow splitright
 filetype plugin on
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
-	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
-	autocmd VimEnter * PlugInstall
+    echo "Downloading junegunn/vim-plug to manage plugins..."
+    silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
@@ -153,6 +153,21 @@ augroup FOO_BAR
     " Disables automatic commenting on newline:
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-    " Reset cursor shape
+    " Reset cursor shape when leaving
     autocmd VimLeave * set guicursor=a:ver10-blinkon0
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it for commit messages, when the position is invalid, or when
+    " inside an event handler (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+
+    " Set syntax highlighting for specific file types
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile .zshrc.local,*.zsh, set filetype=sh
+    autocmd BufRead,BufNewFile .gitconfig.local set filetype=gitconfig
+    autocmd BufRead,BufNewFile .tmux.conf.local set filetype=tmux
+    autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 augroup END
