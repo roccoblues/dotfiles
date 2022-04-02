@@ -39,10 +39,10 @@ alias gm="git merge"
 
 # delete local branches who's remote ref is gone
 function gclean() {
-  git fetch --prune
-  for branch in $(git for-each-ref --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads); do
-    git branch -D $branch;
-  done
+    git fetch --prune
+    for branch in $(git for-each-ref --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads); do
+        git branch -D $branch;
+    done
 }
 
 # show color palette
@@ -67,12 +67,12 @@ compinit
 
 # Brew Autocompletion
 if type brew &>/dev/null; then
- fpath+=$(brew --prefix)/share/zsh/site-functions
+    fpath+=$(brew --prefix)/share/zsh/site-functions
 fi
 
 # Zsh autocompletions
 if type brew &>/dev/null; then
-  fpath+=$(brew --prefix)/share/zsh-completions
+    fpath+=$(brew --prefix)/share/zsh-completions
 fi
 
 # Zsh autosuggestions
