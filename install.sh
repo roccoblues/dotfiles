@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e -u -o pipefail
 
-stow --verbose --restow */
+stow --verbose --restow --dotfiles */
 
 if [ ! -f ~/Library/Application\ Support/Code/User/settings.json ]; then
     ln -s $(PWD)/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
