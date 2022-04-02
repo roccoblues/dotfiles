@@ -60,6 +60,7 @@ function colors() {
 # Enable zsh completions
 autoload -Uz compinit
 compinit
+_comp_options+=(globdots)
 
 # Initialize homebrew
 # (/usr/local for macOS Intel, /opt/homebrew for Apple Silicon and /home/linuxbrew/.linuxbrew for Linux
