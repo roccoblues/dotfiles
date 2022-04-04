@@ -47,6 +47,10 @@ function gclean() {
     done
 }
 
+function cdup() {
+  cd "$(git rev-parse --show-toplevel)"
+}
+
 # show color palette
 function colors() {
     for i in {0..255}; do
