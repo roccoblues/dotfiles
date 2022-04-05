@@ -32,6 +32,7 @@ set colorcolumn=80
 set wildmenu
 set wildmode=longest,list,full
 set splitbelow splitright
+set nojoinspaces
 
 filetype plugin on
 
