@@ -83,6 +83,10 @@ let NERDTreeIgnore = ['\.git$']
 " Write all buffers before navigating from Vim to tmux pane
 let g:tmux_navigator_save_on_switch = 2
 
+" When the type of shell script is /bin/sh, assume a POSIX-compatible
+" shell for syntax highlighting purposes.
+let g:is_posix = 1
+
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -141,14 +145,9 @@ augroup FOO_BAR
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 
-    " Format on save
+    " Format go files on save
     autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync()
     autocmd BufWritePre *.go lua OrgImports(1000)
-
-    " Ensure files are read as what I want:
-    autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
-    autocmd BufRead,BufNewFile *.tex set filetype=tex
-    autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
     " Disables automatic commenting on newline:
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -164,7 +163,9 @@ augroup FOO_BAR
         \   exe "normal g`\"" |
         \ endif
 
-    " Set syntax highlighting for specific file types
+    " Ensure files are read as what I want:
+    autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+    autocmd BufRead,BufNewFile *.tex set filetype=tex
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile .zshrc.local,*.zsh, set filetype=sh
     autocmd BufRead,BufNewFile .gitconfig.local set filetype=gitconfig
