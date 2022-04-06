@@ -100,6 +100,8 @@ nnoremap <leader>lr :Telescope lsp_references<CR>
 nnoremap <leader>li :Telescope lsp_implementations<CR>
 nnoremap <leader>le :Telescope diagnostics<CR>
 nnoremap gd :Telescope lsp_definitions<CR>
+nnoremap <leader>lc :Telescope git_commits<CR>
+nnoremap <leader>lb :Telescope git_branches<CR>
 
 " Perform dot commands over visual blocks:
 vnoremap . :normal .<CR>
