@@ -99,6 +99,7 @@ nnoremap <leader>lw :Telescope lsp_dynamic_workspace_symbols ignore_filename=tru
 nnoremap <leader>lr :Telescope lsp_references<CR>
 nnoremap <leader>li :Telescope lsp_implementations<CR>
 nnoremap <leader>le :Telescope diagnostics<CR>
+nnoremap gd :Telescope lsp_definitions<CR>
 
 " Perform dot commands over visual blocks:
 vnoremap . :normal .<CR>
