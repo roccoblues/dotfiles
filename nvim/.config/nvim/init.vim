@@ -137,17 +137,11 @@ inoremap ? ?<c-g>u
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
-
 inoremap <C-c> <esc>
 
 augroup FOO_BAR
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
-
-    " Format go files on save
-    autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync()
-    autocmd BufWritePre *.go lua OrgImports(1000)
 
     " Disables automatic commenting on newline:
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
