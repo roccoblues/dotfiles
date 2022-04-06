@@ -94,7 +94,8 @@ nnoremap <S-Tab> :bprevious<CR>
 " Telescope keybindings
 nnoremap <leader>ff :Telescope find_files hidden=true no_ignore=true<CR>
 nnoremap <leader>ps :Telescope live_grep<CR>
-nnoremap <leader>ls :Telescope lsp_document_symbols<CR>
+nnoremap <leader>ls :Telescope lsp_document_symbols ignore_filename=true<CR>
+nnoremap <leader>lw :Telescope lsp_dynamic_workspace_symbols ignore_filename=true<CR>
 nnoremap <leader>lr :Telescope lsp_references<CR>
 nnoremap <leader>li :Telescope lsp_implementations<CR>
 nnoremap <leader>le :Telescope diagnostics<CR>
