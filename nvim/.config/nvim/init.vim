@@ -65,6 +65,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'windwp/nvim-autopairs'
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
