@@ -68,6 +68,9 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'windwp/nvim-autopairs'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'buoto/gotests-vim'
+Plug 'vim-test/vim-test'
+Plug 'benmills/vim-golang-alternate'
 call plug#end()
 
 colorscheme base16-default-dark
