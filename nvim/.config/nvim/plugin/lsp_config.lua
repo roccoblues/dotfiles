@@ -88,10 +88,14 @@ require("luasnip.loaders.from_lua").lazy_load()
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
+    matching = {
+      disallow_fuzzy_matching = true,
+      disallow_partial_matching = true,
+      disallow_prefix_unmatching = true,
+    },  snippet = {
+  expand = function(args)
+    luasnip.lsp_expand(args.body)
+  end,
   },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
