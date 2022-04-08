@@ -78,6 +78,8 @@ highlight Normal ctermfg=7 ctermbg=None guifg=#d8d8d8 guibg=#181818
 
 let mapleader = " "
 
+let test#strategy = "neovim"
+
 let g:airline_theme='base16_default_dark'
 let g:airline#extensions#tabline#enabled = 1
 
