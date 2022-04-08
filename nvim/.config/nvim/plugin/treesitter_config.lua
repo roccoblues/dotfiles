@@ -1,4 +1,13 @@
 require "nvim-treesitter.configs".setup {
+    ensure_installed = {
+        "go",
+        "ruby",
+        "bash",
+        "html",
+        "lua",
+        "rust",
+        "yaml",
+    },
     highlight = {enable = true},
     textobjects = {
         lsp_interop = {
