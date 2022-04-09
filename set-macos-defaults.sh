@@ -95,6 +95,10 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 echo "  › Disable the crash reporter"
 defaults write com.apple.CrashReporter DialogType -string "none"
 
+echo "  › Disable Sound Effects on Boot"
+sudo nvram SystemAudioVolume=" "
+sudo nvram StartupMute=%01
+
 #############################
 
 echo ""
@@ -132,6 +136,10 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 echo "  ›  Show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+echo "  ›  Set Default Finder Location to Home Folder"
+defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
 #############################
 
