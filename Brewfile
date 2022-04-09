@@ -28,6 +28,7 @@ brew "bat"
 brew "xh"
 brew "tldr"
 brew "wget"
+brew "dust"
 
 cask "rectangle"
 cask "iterm2"
