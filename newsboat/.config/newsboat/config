@@ -49,3 +49,4 @@ highlight feedlist "--- Podcast" color12 default bold
 browser open
 macro v set browser "mpv --really-quiet --no-terminal %u &" ; open-in-browser-noninteractively; set browser open
 macro d set browser "youtube-dl %u &"; open-in-browser-noninteractively; set browser open
+macro p set browser "mpv --player-operation-mode=pseudo-gui -- %u &"; one; set browser open
