@@ -42,6 +42,13 @@ alias gs="git status"
 alias gt="git tag"
 alias gm="git merge"
 
+# fix some defaults
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -vI"
+alias bc="bc -ql"
+alias mkd="mkdir -pv"
+
 # delete local branches who's remote ref is gone
 function gclean() {
     git fetch --prune
