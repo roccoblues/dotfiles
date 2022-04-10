@@ -2,9 +2,6 @@ window:
   decorations: none
   startup_mode: SimpleFullscreen
   dynamic_padding: true
-  padding:
-    x: 6
-    y: 5
 font:
   normal:
     family: Hack Nerd Font
