@@ -44,6 +44,7 @@ highlight feedlist "--- RSS" color12 default bold
 highlight feedlist "--- Youtube" color12 default bold
 highlight feedlist "--- Twitter" color12 default bold
 highlight feedlist "--- Twitch" color12 default bold
+highlight feedlist "--- Podcast" color12 default bold
 
 browser open
 macro v set browser "mpv --really-quiet --no-terminal %u &" ; open-in-browser-noninteractively; set browser open
