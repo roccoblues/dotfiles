@@ -16,6 +16,9 @@ export BAT_THEME="base16"
 alias vim=nvim
 bindkey -e
 
+# automatically cd into typed directory
+setopt autocd
+
 # zsh history
 export HISTFILE=~/.zsh_history
 export HISTFILESIZE=1000000000
