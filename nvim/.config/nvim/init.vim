@@ -61,7 +61,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'tpope/vim-obsession'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
@@ -72,6 +71,8 @@ Plug 'buoto/gotests-vim'
 Plug 'vim-test/vim-test'
 Plug 'benmills/vim-golang-alternate'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-eunuch'
 call plug#end()
 
 colorscheme base16-default-dark
