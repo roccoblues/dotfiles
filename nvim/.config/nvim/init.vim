@@ -72,6 +72,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-sleuth'
+Plug 'romainl/vim-qf'
 call plug#end()
 
 colorscheme base16-default-dark
@@ -82,7 +83,8 @@ let mapleader = " "
 let test#strategy = "neovim"
 
 let g:airline_theme='base16_default_dark'
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#nvimlsp#enabled = 1
 
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.git$']
