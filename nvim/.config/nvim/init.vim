@@ -83,8 +83,7 @@ let mapleader = " "
 
 let test#strategy = "neovim"
 
-let g:airline_theme='base16_default_dark'
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='base16'
 let g:airline#extensions#nvimlsp#enabled = 1
 
 let NERDTreeShowHidden=1
