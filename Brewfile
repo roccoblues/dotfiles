@@ -29,6 +29,7 @@ brew "xh"
 brew "tldr"
 brew "wget"
 brew "dust"
+brew "gnu-sed"
 
 cask "rectangle"
 cask "iterm2"
