@@ -2,3 +2,5 @@
 .vscode
 .envrc
 .swp
+.direnv
+.DS_Store
