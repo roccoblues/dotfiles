@@ -15,8 +15,6 @@ set noshowcmd
 set autowrite
 set updatetime=100
 set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
 set smartindent
 set hidden
 set noerrorbells
@@ -73,6 +71,7 @@ Plug 'benmills/vim-golang-alternate'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-sleuth'
 call plug#end()
 
 colorscheme base16-default-dark
