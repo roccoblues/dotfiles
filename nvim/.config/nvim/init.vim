@@ -9,6 +9,7 @@ set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
 set noshowmode
+set noshowcmd
 set noruler
 set laststatus=2
 set noshowcmd
