@@ -77,13 +77,17 @@ Plug 'romainl/vim-qf'
 call plug#end()
 
 colorscheme base16-default-dark
-highlight Normal ctermfg=7 ctermbg=None guifg=#d8d8d8 guibg=#181818
+highlight Normal ctermfg=7 ctermbg=None
 
 let mapleader = " "
 
 let test#strategy = "neovim"
 
 let g:airline_theme='base16'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tabs = 0
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#nvimlsp#enabled = 1
 
 let NERDTreeShowHidden=1
@@ -110,7 +114,7 @@ nnoremap <leader>li :Telescope lsp_implementations<CR>
 nnoremap <leader>le :Telescope diagnostics<CR>
 nnoremap gd :Telescope lsp_definitions<CR>
 nnoremap <leader>lc :Telescope git_commits<CR>
-nnoremap <leader>lb :Telescope git_branches<CR>
+nnoremap <leader>lb :Telescope buffers<CR>
 
 " Perform dot commands over visual blocks:
 vnoremap . :normal .<CR>
