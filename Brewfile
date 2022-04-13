@@ -30,6 +30,8 @@ brew "tldr"
 brew "wget"
 brew "dust"
 brew "gnu-sed"
+brew "duf"
+brew "entr"
 
 cask "rectangle"
 cask "iterm2"
