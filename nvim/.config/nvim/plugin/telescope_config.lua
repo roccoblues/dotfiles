@@ -1,11 +1,11 @@
 require("telescope").setup {
     defaults = {
-        layout_strategy = "vertical",
+        layout_strategy = "horizontal",
         layout_config = {
-            width = 0.8,
-            height = 0.8,
-            preview_height = 0.7,
-            prompt_position = "bottom",
+            -- width = 0.8,
+            -- height = 0.8,
+            preview_width = 0.6,
+            -- prompt_position = "bottom",
         },
         file_ignore_patterns = {
             "%.git/"
