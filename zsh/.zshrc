@@ -49,6 +49,8 @@ alias rm="rm -vI"
 alias bc="bc -ql"
 alias mkd="mkdir -pv"
 
+alias ls="exa"
+
 # delete local branches who's remote ref is gone
 function gclean() {
     git fetch --prune
