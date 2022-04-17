@@ -101,7 +101,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(direnv hook zsh)"
 
 # Initialize asdf
-. $(brew --prefix asdf)/asdf.sh
+unset ASDF_DIR
+. $(brew --prefix asdf)/libexec/asdf.sh
 
 # Source local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
