@@ -1,7 +1,9 @@
-syntax on
+lua require('plugins')
+
 set encoding=utf-8
 set number relativenumber
 set nocompatible
+set backspace=indent,eol,start
 set title
 set bg=light
 set go=a
@@ -33,9 +35,8 @@ set wildmode=longest,list,full
 set splitbelow splitright
 set nojoinspaces
 
+syntax on
 filetype plugin on
-
-lua require('plugins')
 
 colorscheme base16-default-dark
 " dim inactive window
