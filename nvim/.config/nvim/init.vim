@@ -35,47 +35,10 @@ set nojoinspaces
 
 filetype plugin on
 
-if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
-    echo "Downloading junegunn/vim-plug to manage plugins..."
-    silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
-    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
-    autocmd VimEnter * PlugInstall
-endif
-
-call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'ray-x/lsp_signature.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'chriskempson/base16-vim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'windwp/nvim-autopairs'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'buoto/gotests-vim'
-Plug 'vim-test/vim-test'
-Plug 'benmills/vim-golang-alternate'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-sleuth'
-Plug 'romainl/vim-qf'
-call plug#end()
+lua require('plugins')
 
 colorscheme base16-default-dark
+" dim inactive window
 highlight Normal ctermfg=7 ctermbg=None
 
 let mapleader = " "
@@ -101,13 +64,6 @@ let g:loaded_logipat = 1
 let g:loaded_rrhelper = 1
 let g:loaded_spellfile_plugin = 1
 let g:loaded_matchit = 1
-
-let g:airline_theme='base16'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_tabs = 0
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#nvimlsp#enabled = 1
 
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.git$']
