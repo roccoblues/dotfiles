@@ -100,7 +100,6 @@ map <leader>g :Git<CR>
 
 nnoremap <silent> Q <nop>
 
-nnoremap <leader>x :silent !chmod +x %<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 " Replace all is aliased to S.
