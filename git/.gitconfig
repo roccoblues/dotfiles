@@ -39,3 +39,5 @@
 	rebase = false
 [rebase]
 	autoStash = true
+[push]
+	default = current
