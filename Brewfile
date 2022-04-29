@@ -42,6 +42,7 @@ cask "tunnelblick"
 cask "alacritty"
 cask "firefox"
 cask "mark-text"
+cask "insomnia"
 
 tap "homebrew/cask-fonts"
 cask "font-hack-nerd-font"
