@@ -21,8 +21,12 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
   use 'chriskempson/base16-vim'
-  use 'preservim/nerdtree'
-  use 'Xuyuanp/nerdtree-git-plugin'
+  use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons',
+      }
+  }
   use {
     "nvim-lualine/lualine.nvim",
     requires = { 'kyazdani42/nvim-web-devicons' },

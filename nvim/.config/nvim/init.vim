@@ -66,9 +66,6 @@ let g:loaded_rrhelper = 1
 let g:loaded_spellfile_plugin = 1
 let g:loaded_matchit = 1
 
-let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.git$']
-
 " Write all buffers before navigating from Vim to tmux pane
 let g:tmux_navigator_save_on_switch = 2
 
@@ -95,7 +92,7 @@ nnoremap <leader>lb :Telescope buffers<CR>
 " Perform dot commands over visual blocks:
 vnoremap . :normal .<CR>
 
-map <leader>n :NERDTreeFind<CR>
+map <leader>n :NvimTreeFindFileToggle<CR>
 map <leader>g :Git<CR>
 
 nnoremap <silent> Q <nop>
