@@ -32,6 +32,7 @@ brew "dust"
 brew "gnu-sed"
 brew "duf"
 brew "entr"
+brew "telnet"
 
 cask "rectangle"
 cask "iterm2"
