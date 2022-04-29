@@ -99,6 +99,12 @@ function rmqq() {
     qq
 }
 
+# What process is using this port?
+function portls() {
+    local port=$1
+    sudo lsof -nP -iTCP -sTCP:LISTEN | grep ":$port "
+}
+
 # Enable zsh completions
 autoload -Uz compinit
 compinit
