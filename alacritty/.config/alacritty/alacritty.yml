@@ -34,39 +34,34 @@ key_bindings:
   - { key: Key7, mods: Alt, chars: "\x1b7" }
   - { key: Key8, mods: Alt, chars: "\x1b8" }
   - { key: Key9, mods: Alt, chars: "\x1b9" }
-# Base16 Default Dark - alacritty color config
-# Chris Kempson (http://chriskempson.com)
+
+# Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
-    background: '0x181818'
-    foreground: '0xd8d8d8'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x181818'
-    cursor: '0xd8d8d8'
+    background: '0x1d2021'
+    foreground: '0xebdbb2'
 
   # Normal colors
   normal:
-    black:   '0x181818'
-    red:     '0xab4642'
-    green:   '0xa1b56c'
-    yellow:  '0xf7ca88'
-    blue:    '0x7cafc2'
-    magenta: '0xba8baf'
-    cyan:    '0x86c1b9'
-    white:   '0xd8d8d8'
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
 
   # Bright colors
   bright:
-    black:   '0x585858'
-    red:     '0xdc9656'
-    green:   '0x282828'
-    yellow:  '0x383838'
-    blue:    '0xb8b8b8'
-    magenta: '0xe8e8e8'
-    cyan:    '0xa16946'
-    white:   '0xf8f8f8'
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
 
-draw_bold_text_with_bright_colors: false
+  draw_bold_text_with_bright_colors: false
