@@ -5,7 +5,7 @@ set number relativenumber
 set nocompatible
 set backspace=indent,eol,start
 set title
-set bg=light
+set bg=dark
 set go=a
 set mouse=a
 set nohlsearch
@@ -38,7 +38,7 @@ set nojoinspaces
 syntax on
 filetype plugin on
 
-colorscheme base16-default-dark
+colorscheme gruvbox
 " dim inactive window
 highlight Normal ctermfg=7 ctermbg=None
 
