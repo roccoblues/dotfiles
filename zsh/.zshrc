@@ -30,6 +30,7 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
 # git aliases
+alias g='git'
 alias ga="git add"
 alias gc="git commit"
 alias gco="git checkout"
@@ -49,7 +50,19 @@ alias rm="rm -vI"
 alias bc="bc -ql"
 alias mkd="mkdir -pv"
 
+# other
 alias ls="exa"
+alias ll='exa -bghla -sname --group-directories-first'
+alias tree='exa -sname --tree'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+alias yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'"
+alias yta="yt -x -f bestaudio/best"
+alias d="docker"
+alias dps="docker ps"
+alias dcu="docker compose up --build"
+alias dcd="docker compose down"
+alias dcb="docker compose build"
 
 # delete local branches who's remote ref is gone
 function gclean() {
