@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
   use 'vim-test/vim-test'
   use 'benmills/vim-golang-alternate'
   use 'romainl/vim-qf'
+  use 'rhysd/git-messenger.vim'
 
   use 'wbthomason/packer.nvim'
   if packer_bootstrap then
