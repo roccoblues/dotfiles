@@ -34,6 +34,7 @@ set wildmenu
 set wildmode=longest,list,full
 set splitbelow splitright
 set nojoinspaces
+set cursorline
 
 syntax on
 filetype plugin on
