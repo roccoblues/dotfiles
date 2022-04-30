@@ -11,7 +11,6 @@ export XDG_DATA_HOME=~/.local/share
 export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/asdfrc
 export ASDF_DATA_DIR=${XDG_DATA_HOME}/asdf
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export BAT_THEME="base16"
 
 alias vim=nvim
 bindkey -e
