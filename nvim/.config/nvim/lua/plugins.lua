@@ -14,7 +14,6 @@ vim.cmd([[
 return require('packer').startup(function(use)
   use 'tpope/vim-sensible'
   use 'tpope/vim-surround'
-  use 'tpope/vim-commentary'
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-eunuch'
   use 'tpope/vim-sleuth'
@@ -52,6 +51,12 @@ return require('packer').startup(function(use)
   use 'benmills/vim-golang-alternate'
   use 'romainl/vim-qf'
   use 'rhysd/git-messenger.vim'
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
 
   use 'wbthomason/packer.nvim'
   if packer_bootstrap then
