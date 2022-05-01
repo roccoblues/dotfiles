@@ -35,13 +35,14 @@ set wildmode=longest,list,full
 set splitbelow splitright
 set nojoinspaces
 set cursorline
+set termguicolors
 
 syntax on
 filetype plugin on
 
 colorscheme gruvbox
 " dim inactive window
-highlight Normal ctermfg=7 ctermbg=None
+highlight Normal guibg=None
 
 let mapleader = " "
 
