@@ -21,30 +21,30 @@ bind-key U show-urls
 bind-key x pb-delete
 
 feedlist-format "%?T?  %8u  %t  %4S & --- %t ?"
-# articlelist-format "%D  %t"
 
-color background          color15    default
-color listnormal          color248   default
-color listnormal_unread   color9     default
-color listfocus           color0     color9
-color listfocus_unread    color0     color9   bold
-color info                color12    color0
-color article             color248   default
+highlight feedlist "--- RSS" color109 default
+highlight feedlist "--- Youtube" color109 default
+highlight feedlist "--- Twitter" color109 default
+highlight feedlist "--- Twitch" color109 default
+highlight feedlist "--- Podcast" color109 default
 
-# highlights
-highlight article "^(Feed|Link):.*$" color14 default bold
-highlight article "^(Date|Author):.*$" color14 default bold
-highlight article "^(Title):.*$" color4 default bold
-highlight article "https?://[^ ]+" color5 default underline
-highlight article "\\[[0-9]+\\]" color5 default bold
-highlight article "\\[image\\ [0-9]+\\]" color5 default bold
+color article                              color223 default
+color background                           color100 default
+color info                                 color142 default
+color listfocus                            color214 color239
+color listfocus_unread                     color214 color239
+color listnormal                           color246 default
+color listnormal_unread                    color175 default
 
-highlight feedlist "^─.*$" color14 color0 bold
-highlight feedlist "--- RSS" color12 default bold
-highlight feedlist "--- Youtube" color12 default bold
-highlight feedlist "--- Twitter" color12 default bold
-highlight feedlist "--- Twitch" color12 default bold
-highlight feedlist "--- Podcast" color12 default bold
+highlight article "^Feed:.*"               color175 default
+highlight article "^Title:.*"              color214 default bold
+highlight article "^Author:.*"             color167 default
+highlight article "^Link:.*"               color109 default
+highlight article "^Date:.*"               color142 default
+highlight article "\\[[0-9]\\+\\]"         color208 default bold
+highlight article "\\[[^0-9].*[0-9]\\+\\]" color167 default bold
+highlight article "https?://[^ ]+"         color109 default underline
+highlight article "\\[image\\ [0-9]+\\]"   color109 default bold
 
 browser open
 macro v set browser "mpv --really-quiet --no-terminal %u &" ; open-in-browser-noninteractively; set browser open
