@@ -16,12 +16,6 @@
 [interactive]
     diffFilter = delta --color-only
 [delta]
-    minus-style = syntax "#450a15"
-    minus-emph-style = syntax "#600818"
-    plus-style = syntax "#0b4820"
-    plus-emph-style = syntax "#175c2e"
-    hunk-header-style = syntax bold
-    hunk-header-decoration-style = omit
     navigate = true  # use n and N to move between diff sections
     syntax-theme = gruvbox-dark
     line-numbers = true
