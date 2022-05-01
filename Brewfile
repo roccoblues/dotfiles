@@ -44,6 +44,7 @@ cask "alacritty"
 cask "firefox"
 cask "mark-text"
 cask "insomnia"
+cask "keycastr"
 
 tap "homebrew/cask-fonts"
 cask "font-hack-nerd-font"
