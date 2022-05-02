@@ -151,7 +151,10 @@ unset ASDF_DIR
 # Source local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-eval "$(starship init zsh)"
-
 # Use fzf for autocompletion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# enable syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(starship init zsh)"
