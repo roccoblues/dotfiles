@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set +e -u -o pipefail
 
-if [ "$(uname -s)" != "Darwin" ]; then
+if [[ "$(uname -s)" != "Darwin" ]]; then
     exit 0
 fi
 

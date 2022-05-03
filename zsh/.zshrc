@@ -94,7 +94,7 @@ function qq() {
         logpath="/tmp/q"
     fi
 
-    if [[ ! -f "$logpath" ]]; then
+    if ! [[ -f "$logpath" ]]; then
         echo 'Q LOG' > "$logpath"
     fi
 
@@ -146,7 +146,7 @@ eval "$(direnv hook zsh)"
 
 # Initialize asdf
 unset ASDF_DIR
-. $(brew --prefix asdf)/libexec/asdf.sh
+source $(brew --prefix asdf)/libexec/asdf.sh
 
 # Source local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
