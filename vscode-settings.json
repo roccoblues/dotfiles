@@ -23,10 +23,10 @@
             "unusedparams": false,
             "unusedwrite": true,
             "useany": true
-        },
+        }
     },
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
     "editor.guides.indentation": false,
-    "workbench.colorTheme": "Base16 Default Dark",
+    "workbench.colorTheme": "Base16 Default Dark"
 }
