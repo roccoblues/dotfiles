@@ -31,5 +31,11 @@ return {
   s("fori", fmt("for {} := 0; {} < {}; {}++ {{\n\t{}\n}}", { i(1, "i"), same(1), i(2, "n"), same(1), i(0) })),
   s("forr", fmt("for {}, {} := range {} {{\n\t{}\n}}", { i(2, "k"), i(3, "v"), i(1), i(0) })),
   s("func", fmt("func {}({}) {} {{\n\t{}\n}}", { i(1, "name"), i(2, "params"), i(3), i(0) })),
+  s("json", fmt("`json:\"{}\"`", { i(0, "key") })),
   s("qq", fmt("q.Q({})", { i(0) })),
+  s("map", fmt("map[{}]{}", { i(1, "string"), i(0, "int") })),
+  s("select", fmt("select {{\ncase {} := <-{}\n\t{}\n}}", { i(1), i(2, "ch"), i(0) })),
+  s("st", fmt("type {} struct {{\n{}\n}}", { i(1), i(0) })),
+  s("switch", fmt("switch {} {{\ncase {}:\n\t{}\n}}", { i(1, "var"), i(2, "value"), i(0) })),
+  s("test", fmt("func Test{}(t *testing.T) {{\n\t{}\n}}", { i(1, "Function"), i(0) })),
 }
