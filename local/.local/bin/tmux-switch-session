@@ -1,10 +1,9 @@
-#!/bin/zsh
+#!/bin/bash
+set -e -u -o pipefail
 
-set -e
-
-tmux list-sessions -F '#{session_activity}:#{session_name}' | \
-  sort -nr | \
-  cut -d ':' -f 2 | \
-  grep -v "^$(tmux display-message -p '#S')$" | \
-  fzf --reverse | \
-  xargs tmux switch-client -t
+tmux list-sessions -F '#{session_activity}:#{session_name}' \
+    | sort -nr \
+    | cut -d ':' -f 2 \
+    | grep -v "^$(tmux display-message -p '#S')$" \
+    | fzf --reverse \
+    | xargs tmux switch-client -t

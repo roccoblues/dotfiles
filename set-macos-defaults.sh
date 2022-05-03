@@ -1,10 +1,9 @@
-#!/bin/sh
+#!/bin/bash
+set +e -u -o pipefail
 
 if [ "$(uname -s)" != "Darwin" ]; then
-	exit 0
+    exit 0
 fi
-
-set +e
 
 sudo -v
 
@@ -87,7 +86,7 @@ sudo pmset -a standbydelay 86400
 
 echo "  › Removing duplicates in the 'Open With' menu"
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
-	-kill -r -domain local -domain system -domain user
+    -kill -r -domain local -domain system -domain user
 
 echo "  › Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -138,8 +137,8 @@ echo "  ›  Show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 echo "  ›  Set Default Finder Location to Home Folder"
-defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
+defaults write com.apple.finder NewWindowTarget -string "PfLo" \
+    && defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
 #############################
 
@@ -259,8 +258,8 @@ sudo pmset -a sms 0
 echo ""
 echo "› Restart related apps"
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-	"Terminal" "Photos"; do
-	killall "$app" >/dev/null 2>&1
+    "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
+    "Terminal" "Photos"; do
+    killall "$app" >/dev/null 2>&1
 done
 set -e

@@ -1,37 +1,36 @@
-#!/bin/zsh
+#!/bin/bash
+set -e -u -o pipefail
 
-set -e
-
-if [[ $# > 0 ]]; then
+if [ $# -gt 0 ]; then
     dir=$1
 else
     dir=$(pwd)
 fi
 
 main() {
-  project=$(projects | fzf --reverse)
-  if [ ! -z "$project" ]; then
-    (cd "$project" && tat)
-  fi
+    project=$(projects "$@" | fzf --reverse)
+    if [ -n "$project" ]; then
+        (cd "$project" && tat)
+    fi
 }
 
 _directories() {
-  find $dir \
-    -type d \
-    -mindepth 1 \
-    -maxdepth 1
+    find "$dir" \
+        -type d \
+        -mindepth 1 \
+        -maxdepth 1
 }
 
 _is_a_git_repo() {
-  while read dir; do
-    if [[ -d "$dir/.git" ]]; then
-      echo "$dir"
-    fi
-  done
+    while read -r dir; do
+        if [ -d "$dir/.git" ]; then
+            echo "$dir"
+        fi
+    done
 }
 
 projects() {
-  _directories $1 | _is_a_git_repo
+    _directories "$1" | _is_a_git_repo
 }
 
-main
+main "$@"
