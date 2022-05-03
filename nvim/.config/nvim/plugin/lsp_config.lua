@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", " rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", " ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", ",f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", " f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -69,6 +69,7 @@ lspconfig.gopls.setup {
 lspconfig.efm.setup {
     init_options = {documentFormatting = true},
     filetypes = { "sh" },
+    on_attach = on_attach,
     settings = {
         rootMarkers = {".git/"},
         languages = {
@@ -76,7 +77,7 @@ lspconfig.efm.setup {
               { lintCommand = "shellcheck -f gcc -x -" },
               { lintStdin = true },
               { lintFormats = { "%f:%l:%c: %trror: %m", "%f:%l:%c: %tarning: %m", "%f:%l:%c: %tote: %m" } },
-              { formatCommand = 'shfmt -ci -bn -s -i 4' },
+              { formatCommand = 'shfmt -ci -p -bn -i 4' },
               { formatStdin = true },
             }
         }
