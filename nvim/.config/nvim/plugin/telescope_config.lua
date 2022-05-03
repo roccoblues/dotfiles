@@ -21,6 +21,6 @@ require("telescope").setup {
             "--hidden"
         }
     },
-    extensions = {fzf = {}}
+    extensions = { fzf = {} }
 }
 require("telescope").load_extension("fzf")

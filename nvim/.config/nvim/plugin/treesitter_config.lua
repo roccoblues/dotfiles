@@ -8,7 +8,7 @@ require "nvim-treesitter.configs".setup {
         "rust",
         "yaml",
     },
-    highlight = {enable = true},
+    highlight = { enable = true },
     textobjects = {
         lsp_interop = {
             enable = true,

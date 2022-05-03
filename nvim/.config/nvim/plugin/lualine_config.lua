@@ -4,6 +4,6 @@ require('lualine').setup({
     theme = 'gruvbox',
   },
   tabline = {
-    lualine_a = {'buffers'},
+    lualine_a = { 'buffers' },
   },
 })
