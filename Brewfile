@@ -38,6 +38,7 @@ brew "telnet"
 brew "shellcheck"
 brew "shfmt"
 brew "lua-language-server"
+brew "efm-langserver"
 
 cask "rectangle"
 cask "iterm2"
