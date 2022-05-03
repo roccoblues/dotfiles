@@ -10,6 +10,7 @@ local t = ls.text_node
 local d = ls.dynamic_node
 local c = ls.choice_node
 local fmt = require("luasnip.extras.fmt").fmt
+local f = ls.function_node
 local s = ls.snippet
 
 local same = function(index)
