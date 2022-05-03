@@ -35,6 +35,8 @@ brew "gnu-sed"
 brew "duf"
 brew "entr"
 brew "telnet"
+brew "shellcheck"
+brew "shfmt"
 
 cask "rectangle"
 cask "iterm2"

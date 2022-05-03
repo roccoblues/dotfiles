@@ -66,6 +66,23 @@ lspconfig.gopls.setup {
     }
 }
 
+lspconfig.efm.setup {
+    init_options = {documentFormatting = true},
+    filetypes = { "sh" },
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            sh = {
+              { lintCommand = "shellcheck -f gcc -x -" },
+              { lintStdin = true },
+              { lintFormats = { "%f:%l:%c: %trror: %m", "%f:%l:%c: %tarning: %m", "%f:%l:%c: %tote: %m" } },
+              { formatCommand = 'shfmt -ci -bn -s -i 4' },
+              { formatStdin = true },
+            }
+        }
+    }
+}
+
 function OrgImports(wait_ms)
     local params = vim.lsp.util.make_range_params()
     params.context = {only = {"source.organizeImports"}}
