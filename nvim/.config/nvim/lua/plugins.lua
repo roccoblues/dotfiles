@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
+  use { 'rrethy/vim-hexokinase', run = 'make hexokinase' }
 
   use 'wbthomason/packer.nvim'
   if packer_bootstrap then

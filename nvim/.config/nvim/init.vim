@@ -75,6 +75,8 @@ let g:tmux_navigator_save_on_switch = 2
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
 
+let g:Hexokinase_highlighters = [ 'virtual' ]
+
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
