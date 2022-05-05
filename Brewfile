@@ -39,6 +39,7 @@ brew "shellcheck"
 brew "shfmt"
 brew "lua-language-server"
 brew "efm-langserver"
+brew "findutils"
 
 cask "rectangle"
 cask "iterm2"
