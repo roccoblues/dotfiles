@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-eunuch'
   use 'tpope/vim-sleuth'
   use 'tpope/vim-fugitive'
-  use 'lewis6991/gitsigns.nvim'
+  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'gruvbox-community/gruvbox'
   use {
     'kyazdani42/nvim-tree.lua',
