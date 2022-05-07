@@ -40,6 +40,7 @@ brew "shfmt"
 brew "lua-language-server"
 brew "efm-langserver"
 brew "findutils"
+brew "ctags"
 
 cask "rectangle"
 cask "iterm2"

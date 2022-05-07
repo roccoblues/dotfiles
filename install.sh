@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -e -u -o pipefail
 
-packages=$(find . -type d -maxdepth 0)
-stow --verbose --restow --dotfiles "$packages"
+for package in */; do
+    stow --verbose --restow --dotfiles $package
+done
 
 if ! [[ -f ~/Library/Application\ Support/Code/User/settings.json ]]; then
     ln -s "$(PWD)/vscode-settings.json" ~/Library/Application\ Support/Code/User/settings.json
