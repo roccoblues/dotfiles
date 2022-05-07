@@ -68,7 +68,7 @@ lspconfig.efm.setup {
         { lintCommand = "shellcheck -f gcc -x -" },
         { lintStdin = true },
         { lintFormats = { "%f:%l:%c: %trror: %m", "%f:%l:%c: %tarning: %m", "%f:%l:%c: %tote: %m" } },
-        { formatCommand = 'shfmt -ci -p -bn -i 4' },
+        { formatCommand = 'shfmt -ci -p -bn -s -i 4' },
         { formatStdin = true },
       }
     }
