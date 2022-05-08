@@ -22,10 +22,6 @@ vim.keymap.set('n', 'S', ':%s//g<Left><Left>')
 
 vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeFindFileToggle<cr>', { silent = true })
 
---Quickfix list navigation
-vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>zz', { silent = true })
-vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>zz', { silent = true })
-
 --Yank until end of line
 vim.keymap.set('n', 'Y', 'y$', { silent = true })
 
@@ -57,3 +53,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>k', vim.diagnostic.goto_prev)
 vim.keymap.set('n', '<leader>j', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
+-- Quickfix window
+vim.keymap.set('n', '<leader>cc', '<plug>(qf_qf_toggle)')
+vim.keymap.set('n', '<C-p>', '<Plug>(qf_qf_previous)zz', { silent = true })
+vim.keymap.set('n', '<C-n>', '<Plug>(qf_qf_next)zz', { silent = true })

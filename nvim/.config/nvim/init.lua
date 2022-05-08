@@ -39,6 +39,7 @@ require('packer').startup(function(use)
   use 'benmills/vim-golang-alternate' -- Switch between implementation and test
   use 'rhysd/git-messenger.vim' -- Show git message below the cursor
   use { 'rrethy/vim-hexokinase', run = 'make hexokinase' } -- Show colors
+  use 'romainl/vim-qf' -- Quickfix window improvements
 end)
 
 require('options')
