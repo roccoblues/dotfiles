@@ -16,18 +16,25 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias vim=nvim
 bindkey -e
 
-# automatically cd into typed directory
-setopt autocd
+setopt autocd            # automatically cd into typed directory
+setopt pushd_ignore_dups # Don’t push multiple copies of the same directory onto the directory stack.
+setopt pushd_minus       # Exchanges the meanings of ‘+’ and ‘-’ when used with a number to specify a directory in the stack.
+
+## Turn off all beeps
+unsetopt BEEP
 
 # zsh history
 export HISTFILE=~/.zsh_history
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 export HISTTIMEFORMAT="[%F %T] "
-setopt INC_APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
+setopt INC_APPEND_HISTORY        # add commands to HISTFILE in order of execution
+setopt EXTENDED_HISTORY          # record timestamp of command in HISTFILE
+setopt HIST_EXPIRE_DUPS_FIRST    # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt HIST_FIND_NO_DUPS         # don't show duplicates
+setopt HIST_IGNORE_ALL_DUPS      # keep only the newest entry of duplicates
+setopt HIST_IGNORE_SPACE         # ignore commands that start with space
+setopt HIST_VERIFY               # show command with history expansion to user before running it
 
 # space expands !!, !$ and !*
 bindkey ' ' magic-space
