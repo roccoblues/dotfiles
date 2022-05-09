@@ -150,6 +150,16 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 #############################
 
 echo ""
+echo "› iTerm2:"
+echo "  › Specify the preferences directory"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/iterm2/settings"
+
+echo "  › Tell iTerm2 to use the custom preferences in the directory"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
+#############################
+
+echo ""
 echo "› Browsers:"
 echo "  › Hide Safari's bookmark bar"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
