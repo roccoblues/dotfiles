@@ -27,12 +27,13 @@
     },
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
-    "editor.guides.indentation": false,
     "go.editorContextMenuCommands": {
         "fillStruct": true,
         "playground": false,
         "debugTestAtCursor": false
     },
     "go.survey.prompt": false,
-    "workbench.colorTheme": "Gruvbox Dark Hard"
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "editor.bracketPairColorization.enabled": false,
+    "git.autoStash": true
 }
