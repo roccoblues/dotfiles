@@ -33,5 +33,6 @@
         "playground": false,
         "debugTestAtCursor": false
     },
-    "go.survey.prompt": false
+    "go.survey.prompt": false,
+    "workbench.colorTheme": "Gruvbox Dark Hard"
 }
