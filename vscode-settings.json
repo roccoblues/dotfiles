@@ -35,5 +35,7 @@
     "go.survey.prompt": false,
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "editor.bracketPairColorization.enabled": false,
-    "git.autoStash": true
+    "git.autoStash": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.cursorStyle": "line"
 }
