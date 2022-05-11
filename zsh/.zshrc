@@ -7,6 +7,7 @@ export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 export K9SCONFIG=~/.k9s
 export AWS_DEFAULT_REGION=eu-central-1
 export EDITOR=nvim
+export VISUAL="code --wait"
 export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
 export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/asdfrc
@@ -126,6 +127,11 @@ function rmqq() {
 function portls() {
     local port=$1
     sudo lsof -nP -iTCP -sTCP:LISTEN | grep ":$port "
+}
+
+# Create directory and enter it.
+function mkcd() {
+    mkdir -p "$@" && cd "$1"
 }
 
 # Enable zsh completions
