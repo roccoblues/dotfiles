@@ -41,6 +41,8 @@ brew "lua-language-server"
 brew "efm-langserver"
 brew "findutils"
 brew "ctags"
+brew "restish"
+brew "neofetch"
 
 cask "rectangle"
 cask "iterm2"
