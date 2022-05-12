@@ -133,6 +133,11 @@ function mkcd() {
     mkdir -p "$@" && cd "$1"
 }
 
+# Show public ip address.
+function whatismyip() {
+    curl -s https://api.ipify.org && echo
+}
+
 # Initialize homebrew
 # (/usr/local for macOS Intel, /opt/homebrew for Apple Silicon and /home/linuxbrew/.linuxbrew for Linux
 [ -f "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
