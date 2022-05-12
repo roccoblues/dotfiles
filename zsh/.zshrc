@@ -134,11 +134,6 @@ function mkcd() {
     mkdir -p "$@" && cd "$1"
 }
 
-# Enable zsh completions
-autoload -Uz compinit
-compinit
-_comp_options+=(globdots)
-
 # Initialize homebrew
 # (/usr/local for macOS Intel, /opt/homebrew for Apple Silicon and /home/linuxbrew/.linuxbrew for Linux
 [ -f "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -154,6 +149,11 @@ fi
 if type brew &>/dev/null; then
     fpath+=$(brew --prefix)/share/zsh-completions
 fi
+
+# Enable zsh completions
+autoload -Uz compinit
+compinit
+_comp_options+=(globdots)
 
 # Zsh autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
