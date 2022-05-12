@@ -37,5 +37,10 @@
     "editor.bracketPairColorization.enabled": false,
     "git.autoStash": true,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.cursorStyle": "line"
+    "terminal.integrated.cursorStyle": "line",
+    "editor.cursorStyle": "line-thin",
+    "shellcheck.customArgs": [
+        "-x"
+    ],
+    "shellformat.flag": "-ci -p -bn -s"
 }
