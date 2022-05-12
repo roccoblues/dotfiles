@@ -6,7 +6,7 @@ export PATH=$PATH:~/.local/bin/
 export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 export K9SCONFIG=~/.k9s
 export AWS_DEFAULT_REGION=eu-central-1
-export EDITOR=nvim
+export EDITOR=vim
 export VISUAL="code --wait"
 export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
@@ -14,7 +14,6 @@ export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/asdfrc
 export ASDF_DATA_DIR=${XDG_DATA_HOME}/asdf
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-alias vim=nvim
 bindkey -e
 
 setopt autocd            # automatically cd into typed directory
