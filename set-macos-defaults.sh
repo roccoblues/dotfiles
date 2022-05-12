@@ -65,6 +65,9 @@ defaults write -g com.apple.mouse.scaling 2.5
 echo "  > Avoid the creation of .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+echo "  > Avoid the creation of .DS_Store files on usb volumes"
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 echo "  > Disable the 'Are you sure you want to open this application?' dialog"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
@@ -91,6 +94,10 @@ echo "  > Removing duplicates in the 'Open With' menu"
 echo "  > Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
+echo "  > Expand Print Panel by Default"
+defaults write -g PMPrintingExpandedStateForPrint -bool true && \
+defaults write -g PMPrintingExpandedStateForPrint2 -bool true
+
 echo "  > Disable the crash reporter"
 defaults write com.apple.CrashReporter DialogType -string "none"
 
@@ -98,12 +105,18 @@ echo "  > Disable Sound Effects on Boot"
 sudo nvram SystemAudioVolume=" "
 sudo nvram StartupMute=%01
 
+echo "  > Build Locate Database"
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
 #############################
 
 echo ""
 echo "> Finder:"
 echo "  > Always open everything in Finder's list view"
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+
+echo "  > Set Current Folder as Default Search Scope"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 echo "  > Set the Finder prefs for showing a few different volumes on the Desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -133,10 +146,10 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 echo "  > Disable the warning when changing a file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-echo "  >  Show all filename extensions"
+echo "  > Show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-echo "  >  Set Default Finder Location to Home Folder"
+echo "  > Set Default Finder Location to Home Folder"
 defaults write com.apple.finder NewWindowTarget -string "PfLo" \
     && defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
@@ -171,7 +184,7 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 defaults write -g WebKitDeveloperExtras -bool true
 
-echo "  > Privacy: don’t send search queries to Apple"
+echo "  > Privacy: don't send search queries to Apple"
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
@@ -230,7 +243,7 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 echo "  > Disable automatic spell checking"
 defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
-echo "  >  Disable send and reply animations in Mail.app"
+echo "  > Disable send and reply animations in Mail.app"
 defaults write com.apple.mail DisableReplyAnimations -bool true
 defaults write com.apple.mail DisableSendAnimations -bool true
 
@@ -257,10 +270,10 @@ echo "  > Remove the sleep image file to save disk space"
 sudo rm /private/var/vm/sleepimage
 echo "  > Create a zero-byte file instead..."
 sudo touch /private/var/vm/sleepimage
-echo "  > ...and make sure it can’t be rewritten"
+echo "  > ...and make sure it can't be rewritten"
 sudo chflags uchg /private/var/vm/sleepimage
 
-echo "  >  Disable the sudden motion sensor as it’s not useful for SSDs"
+echo "  >  Disable the sudden motion sensor as it's not useful for SSDs"
 sudo pmset -a sms 0
 
 #############################
