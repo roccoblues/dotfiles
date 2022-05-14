@@ -2,9 +2,6 @@
 set -e -u -o pipefail
 
 for package in */; do
-    if [[ "$package" == "iterm2" ]]; then
-        continue
-    fi
     stow --verbose --restow --dotfiles "$package"
 done
 
