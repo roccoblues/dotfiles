@@ -2281,7 +2281,7 @@
 				<array>
 					<dict>
 						<key>class</key>
-						<string>iTermStatusBarJobComponent</string>
+						<string>iTermStatusBarSwiftyStringComponent</string>
 						<key>configuration</key>
 						<dict>
 							<key>knobs</key>
@@ -2290,10 +2290,12 @@
 								<integer>1</integer>
 								<key>base: priority</key>
 								<real>5</real>
+								<key>expression</key>
+								<string>☁️ \(user.awsProfile)</string>
 								<key>maxwidth</key>
 								<real>+infinity</real>
 								<key>minwidth</key>
-								<integer>0</integer>
+								<string>0</string>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
@@ -2310,7 +2312,7 @@
 					</dict>
 					<dict>
 						<key>class</key>
-						<string>iTermStatusBarWorkingDirectoryComponent</string>
+						<string>iTermStatusBarSwiftyStringComponent</string>
 						<key>configuration</key>
 						<dict>
 							<key>knobs</key>
@@ -2319,12 +2321,12 @@
 								<integer>1</integer>
 								<key>base: priority</key>
 								<real>5</real>
+								<key>expression</key>
+								<string>☸️ \(user.kubeContext)</string>
 								<key>maxwidth</key>
 								<real>+infinity</real>
 								<key>minwidth</key>
-								<integer>0</integer>
-								<key>path</key>
-								<string>path</string>
+								<string>0</string>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
@@ -2499,7 +2501,7 @@
 					</dict>
 					<dict>
 						<key>class</key>
-						<string>iTermStatusBarSpringComponent</string>
+						<string>iTermStatusBarFixedSpacerComponent</string>
 						<key>configuration</key>
 						<dict>
 							<key>knobs</key>
@@ -2508,10 +2510,8 @@
 								<integer>1</integer>
 								<key>base: priority</key>
 								<real>5</real>
-								<key>iTermStatusBarSpringComponentSizeMultipleKey</key>
-								<integer>1</integer>
-								<key>iTermStatusBarSpringComponentSpringConstantKey</key>
-								<real>0.01</real>
+								<key>iTermStatusBarFixedSpacerComponentWidthKnob</key>
+								<integer>5</integer>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
@@ -2519,39 +2519,8 @@
 								<integer>1</integer>
 								<key>auto-rainbow style</key>
 								<integer>0</integer>
-								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
 								<key>remove empty components</key>
-								<true/>
-							</dict>
-						</dict>
-					</dict>
-					<dict>
-						<key>class</key>
-						<string>iTermStatusBarSpringComponent</string>
-						<key>configuration</key>
-						<dict>
-							<key>knobs</key>
-							<dict>
-								<key>base: compression resistance</key>
-								<integer>1</integer>
-								<key>base: priority</key>
-								<real>5</real>
-								<key>iTermStatusBarSpringComponentSizeMultipleKey</key>
-								<integer>1</integer>
-								<key>iTermStatusBarSpringComponentSpringConstantKey</key>
-								<real>0.01</real>
-							</dict>
-							<key>layout advanced configuration dictionary value</key>
-							<dict>
-								<key>algorithm</key>
-								<integer>1</integer>
-								<key>auto-rainbow style</key>
-								<integer>0</integer>
-								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
-								<key>remove empty components</key>
-								<true/>
+								<false/>
 							</dict>
 						</dict>
 					</dict>
