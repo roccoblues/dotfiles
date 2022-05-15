@@ -184,7 +184,8 @@ eval "$(starship init zsh)"
 test -e "${HOME}/.iterm2/shell_integration.zsh" && source "${HOME}/.iterm2/shell_integration.zsh"
 
 iterm2_print_user_vars() {
-iterm2_set_user_var awsProfile $AWS_PROFILE
-KUBECONTEXT=$(CTX=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
-iterm2_set_user_var kubeContext $KUBECONTEXT
+    local context=$(CTX=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
+    iterm2_set_user_var kubeContext $(echo "$context" | sed 's/.*cluster\///g')
+
+    iterm2_set_user_var awsProfile "$AWS_PROFILE"
 }
