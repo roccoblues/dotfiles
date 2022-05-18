@@ -29,10 +29,14 @@ vim.o.updatetime = 250
 --Always show signcolumn
 vim.wo.signcolumn = 'yes'
 
+-- Disable bold text
+vim.g['gruvbox_bold'] = 0
+
 --Set colorscheme
 vim.o.termguicolors = true
 vim.cmd [[colorscheme gruvbox]]
--- dim inactive window
+
+-- Dim inactive window
 vim.cmd [[highlight Normal guibg=None]]
 
 -- Set completeopt to have a better completion experience
