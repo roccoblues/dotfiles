@@ -25,7 +25,7 @@ return {
   s("ap=", fmt("{} = append({}, {})", { i(1, "slice"), same(1), i(0, "value") })),
   s("ife", fmt("if err := {}; err != nil {{\n\t{}\n}}", { i(1, "condition"), i(0) })),
   s("iota", fmt("const (\n\t{} = iota\n\t{}\n)", { i(1, "name"), i(0) })),
-  s("errn", fmt("if err != nil {{\n\treturn nil\n}}\n\n", {})),
+  s("errn", fmt("if err != nil {{\n\treturn err\n}}\n\n", {})),
   s("errnw", fmt("if err != nil {{\n\treturn fmt.Errorf(\"{}\", err)\n}}\n\n", { i(0, "message %w") })),
   s("errt", fmt("if err != nil {{\n\tt.Fatal(err)\n}}\n\n", {})),
   s("fori", fmt("for {} := 0; {} < {}; {}++ {{\n\t{}\n}}", { i(1, "i"), same(1), i(2, "n"), same(1), i(0) })),
