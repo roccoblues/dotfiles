@@ -33,7 +33,7 @@
         "debugTestAtCursor": false
     },
     "go.survey.prompt": false,
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Gruvbox Minor Dark Medium",
     "editor.bracketPairColorization.enabled": false,
     "git.autoStash": true,
     "terminal.external.osxExec": "iTerm.app",
@@ -42,5 +42,9 @@
     "shellcheck.customArgs": [
         "-x"
     ],
-    "shellformat.flag": "-ci -p -bn -s"
+    "shellformat.flag": "-ci -p -bn -s",
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true
+    },
+    "editor.rulers": [80]
 }
