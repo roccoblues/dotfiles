@@ -145,7 +145,7 @@ function whatismyip() {
 [ -f "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
 [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# Brew Autocompletion
+# Brew Autocompletions
 if type brew &>/dev/null; then
     fpath+=$(brew --prefix)/share/zsh/site-functions
 fi
