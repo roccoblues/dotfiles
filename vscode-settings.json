@@ -32,7 +32,7 @@
         "debugTestAtCursor": false
     },
     "go.survey.prompt": false,
-    "workbench.colorTheme": "Gruvbox Minor Dark Medium",
+    "workbench.colorTheme": "Gruvbox Minor Dark Hard",
     "editor.bracketPairColorization.enabled": false,
     "git.autoStash": true,
     "terminal.external.osxExec": "iTerm.app",
