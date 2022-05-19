@@ -5,7 +5,6 @@
     "workbench.startupEditor": "none",
     "files.insertFinalNewline": true,
     "go.lintTool": "golangci-lint",
-    "window.nativeFullScreen": false,
     "zenMode.fullScreen": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "explorer.confirmDelete": false,
@@ -64,5 +63,7 @@
     ],
     "[shellscript]": {
         "files.eol": "\n"
-    }
+    },
+    "window.nativeFullScreen": false,
+    "files.trimFinalNewlines": true
 }
