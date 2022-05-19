@@ -35,9 +35,6 @@ vim.keymap.set('n', 'J', 'mzJ`z', { silent = true })
 --Silence Q
 vim.keymap.set('n', 'Q', '<nop>', { silent = true })
 
---Save file as sudo on files that require root permission
-vim.keymap.set('c', 'W', 'execute ":silent w !sudo tee % > /dev/null" | :edit!')
-
 --Undo break points
 vim.keymap.set('i', ',', ',<c-g>u')
 vim.keymap.set('i', '.', '.<c-g>u')
