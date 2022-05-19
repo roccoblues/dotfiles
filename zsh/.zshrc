@@ -28,13 +28,13 @@ export HISTFILE=~/.zsh_history
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 export HISTTIMEFORMAT="[%F %T] "
-setopt INC_APPEND_HISTORY        # add commands to HISTFILE in order of execution
-setopt EXTENDED_HISTORY          # record timestamp of command in HISTFILE
-setopt HIST_EXPIRE_DUPS_FIRST    # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt HIST_FIND_NO_DUPS         # don't show duplicates
-setopt HIST_IGNORE_ALL_DUPS      # keep only the newest entry of duplicates
-setopt HIST_IGNORE_SPACE         # ignore commands that start with space
-setopt HIST_VERIFY               # show command with history expansion to user before running it
+setopt INC_APPEND_HISTORY     # add commands to HISTFILE in order of execution
+setopt EXTENDED_HISTORY       # record timestamp of command in HISTFILE
+setopt HIST_EXPIRE_DUPS_FIRST # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt HIST_FIND_NO_DUPS      # don't show duplicates
+setopt HIST_IGNORE_ALL_DUPS   # keep only the newest entry of duplicates
+setopt HIST_IGNORE_SPACE      # ignore commands that start with space
+setopt HIST_VERIFY            # show command with history expansion to user before running it
 
 # space expands !!, !$ and !*
 bindkey ' ' magic-space
@@ -79,45 +79,45 @@ alias ta=tmux attach
 function gclean() {
     git fetch --prune
     for branch in $(git for-each-ref --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads); do
-        git branch -D $branch;
+        git branch -D $branch
     done
 }
 
 function cdup() {
-  cd "$(git rev-parse --show-toplevel)"
+    cd "$(git rev-parse --show-toplevel)"
 }
 
 # show color palette
 function colors() {
     for i in {0..255}; do
-        printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i ;
-        if ! (( ($i + 1 ) % 8 )); then
-            echo ;
-        fi ;
+        printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i
+        if ! (((i + 1) % 8)); then
+            echo
+        fi
     done
- }
+}
 
 # https://github.com/ryboe/q
 function qq() {
     clear
 
     logpath="$TMPDIR/q"
-    if [[ -z "$TMPDIR" ]]; then
+    if [[ -z $TMPDIR ]]; then
         logpath="/tmp/q"
     fi
 
-    if ! [[ -f "$logpath" ]]; then
-        echo 'Q LOG' > "$logpath"
+    if ! [[ -f $logpath ]]; then
+        echo 'Q LOG' >"$logpath"
     fi
 
     tail -100f -- "$logpath"
 }
 function rmqq() {
     logpath="$TMPDIR/q"
-    if [[ -z "$TMPDIR" ]]; then
+    if [[ -z $TMPDIR ]]; then
         logpath="/tmp/q"
     fi
-    if [[ -f "$logpath" ]]; then
+    if [[ -f $logpath ]]; then
         rm "$logpath"
     fi
     qq
@@ -185,7 +185,10 @@ eval "$(starship init zsh)"
 test -e "${HOME}/.iterm2/shell_integration.zsh" && source "${HOME}/.iterm2/shell_integration.zsh"
 
 iterm2_print_user_vars() {
-    local context=$(CTX=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
+    local context=$(
+        CTX=$(kubectl config current-context) 2>/dev/null
+        if [ $? -eq 0 ]; then echo $CTX; fi
+    )
     iterm2_set_user_var kubeContext $(echo "$context" | sed 's/.*cluster\///g')
 
     iterm2_set_user_var awsProfile "$AWS_PROFILE"
