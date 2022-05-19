@@ -42,9 +42,27 @@
     "shellcheck.customArgs": [
         "-x"
     ],
-    "shellformat.flag": "-ci -p -bn -s",
+    "shellformat.flag": "-ci -bn -s",
     "editor.semanticTokenColorCustomizations": {
         "enabled": true
     },
-    "editor.rulers": [80]
+    "editor.rulers": [
+        80
+    ],
+    "shellformat.effectLanguages": [
+        "shellscript",
+        "dockerfile",
+        "dotenv",
+        "hosts",
+        "jvmoptions",
+        "ignore",
+        "gitignore",
+        "properties",
+        "spring-boot-properties",
+        "azcli",
+        "bats"
+    ],
+    "[shellscript]": {
+        "files.eol": "\n"
+    }
 }
