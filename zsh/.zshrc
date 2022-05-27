@@ -6,8 +6,8 @@ export PATH=$PATH:~/.local/bin/
 export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 export K9SCONFIG=~/.k9s
 export AWS_DEFAULT_REGION=eu-central-1
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
 export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/asdfrc
@@ -75,6 +75,7 @@ alias dcd="docker compose down"
 alias dcb="docker compose build"
 alias ta="tmux attach"
 alias s="kitty +kitten ssh"
+alias vim=nvim
 
 # delete local branches who's remote ref is gone
 function gclean() {

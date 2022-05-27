@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -e -u -o pipefail
+
+if [[ $# -gt 0 ]]; then
+    dir=$1
+else
+    dir=$(pwd)
+fi
+
+main() {
+    project=$(projects "$@" | fzf --reverse)
+    if [[ -n $project ]]; then
+        session_name=$(basename "$project")
+        kitty @ focus-tab --match title:"$session_name" 2>/dev/null || kitty @ new-window --new-tab --tab-title "$session_name" --cwd "$project"
+    fi
+}
+
+_directories() {
+    find "$dir" \
+        -mindepth 1 \
+        -maxdepth 1 \
+        -type d
+}
+
+_is_a_git_repo() {
+    while read -r dir; do
+        if [[ -d "$dir/.git" ]]; then
+            echo "$dir"
+        fi
+    done
+}
+
+projects() {
+    _directories "$1" | _is_a_git_repo
+}
+
+main "$@"
