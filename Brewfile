@@ -41,7 +41,6 @@ brew "vim"
 brew "wget"
 brew "xh"
 brew "youtube-dl"
-brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 

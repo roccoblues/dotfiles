@@ -160,9 +160,6 @@ autoload -Uz compinit
 compinit
 _comp_options+=(globdots)
 
-# Zsh autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # Setup direnv
 eval "$(direnv hook zsh)"
 
