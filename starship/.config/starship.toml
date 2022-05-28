@@ -6,6 +6,7 @@ $git_branch\
 $git_state\
 $git_status\
 $cmd_duration\
+$line_break\
 $character"""
 
 [directory]
@@ -38,17 +39,3 @@ style = "bright-black"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
-
-[kubernetes]
-disabled = false
-symbol = "☸"
-style = "cyan"
-format = '[$symbol$context(\($namespace\))]($style) '
-
-[kubernetes.context_aliases]
-"arn:.*:cluster/(?P<cluster>[a-z]+).*" = "$cluster"
-
-[aws]
-symbol = "☁️ "
-style = "yellow"
-format = "[$symbol$profile]($style) "
