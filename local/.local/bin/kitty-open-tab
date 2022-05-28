@@ -10,7 +10,7 @@ if kitty @ focus-tab --match title:"$tab_name" 2>/dev/null; then
 fi
 
 if [[ -d "$PWD/.git" ]]; then
-    kitty @ launch --type tab --tab-title "$tab_name" --copy-env --cwd "$PWD" zsh --login -c "nvim '+Telescope find_files'"
+    kitty @ launch --type tab --tab-title "$tab_name" --cwd "$PWD" zsh --login --interactive -c "nvim '+Telescope find_files'"
 else
-    kitty @ launch --type tab --tab-title "$tab_name" --copy-env --cwd "$PWD" zsh --login
+    kitty @ launch --type tab --tab-title "$tab_name" --cwd "$PWD" zsh --login --interactive
 fi
