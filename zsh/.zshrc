@@ -61,6 +61,7 @@ alias bc="bc -ql"
 alias mkd="mkdir -pv"
 
 # other
+alias vim="nvim"
 alias ls="exa"
 alias ll='exa -bghla -sname --group-directories-first'
 alias tree='exa -sname --tree'
@@ -75,7 +76,7 @@ alias dcd="docker compose down"
 alias dcb="docker compose build"
 alias ta="tmux attach"
 alias s="kitty +kitten ssh"
-alias vim=nvim
+alias kt="kitty-open-tab"
 
 # delete local branches who's remote ref is gone
 function gclean() {
