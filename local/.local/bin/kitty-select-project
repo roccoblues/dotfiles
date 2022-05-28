@@ -10,7 +10,7 @@ fi
 main() {
     project=$(projects "$@" | fzf --reverse)
     if [[ -n $project ]]; then
-        cd "$project" && kitty-open-session
+        cd "$project" && kitty-open-tab
     fi
 }
 
