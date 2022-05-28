@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e -u -o pipefail
+
+tabs=$(kitty @ ls | jq -r '.[] .tabs[].title')
+selected=$(echo "$tabs" | fzf --reverse )
+if [ -n "$selected" ]; then
+    kitty @ focus-tab --match title:"$selected"
+fi
