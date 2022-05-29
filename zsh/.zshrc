@@ -19,6 +19,7 @@ bindkey -e
 setopt autocd            # automatically cd into typed directory
 setopt pushd_ignore_dups # Don’t push multiple copies of the same directory onto the directory stack.
 setopt pushd_minus       # Exchanges the meanings of ‘+’ and ‘-’ when used with a number to specify a directory in the stack.
+setopt combiningchars    # combine zero-length punctuation characters (accents) with the base character
 
 ## Turn off all beeps
 unsetopt BEEP
