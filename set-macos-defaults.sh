@@ -108,6 +108,9 @@ sudo nvram StartupMute=%01
 echo "  > Build Locate Database"
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
+echo "  > Enable subpixel font rendering on non-Apple LCDs"
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
+
 #############################
 
 echo ""
@@ -159,13 +162,6 @@ echo ""
 echo "> Photos:"
 echo "  > Disable it from starting everytime a device is plugged in"
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-#############################
-
-echo ""
-echo "> Kitty:"
-echo "  > Enabled font smoothing"
-defaults defaults write com.apple.kitty CGFontRenderingFontSmoothingDisabled -bool false
 
 #############################
 
