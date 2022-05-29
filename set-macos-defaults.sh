@@ -163,6 +163,13 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 #############################
 
 echo ""
+echo "> Kitty:"
+echo "  > Enabled font smoothing"
+defaults defaults write com.apple.kitty CGFontRenderingFontSmoothingDisabled -bool false
+
+#############################
+
+echo ""
 echo "> iTerm2:"
 echo "  > Specify the preferences directory"
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/iterm2/settings"
