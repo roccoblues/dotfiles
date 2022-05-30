@@ -42,3 +42,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" },
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" },
   { pattern = '.tmux.conf.local', group = augroup, command = 'set filetype=tmux' }
 )
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = augroup,
+  pattern = '*',
+  callback = function() vim.highlight.on_yank() end,
+})
