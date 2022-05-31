@@ -20,8 +20,6 @@ vim.keymap.set('n', '<leader>g', '<cmd>Git<cr>', { silent = true })
 --Replace all is aliased to S
 vim.keymap.set('n', 'S', ':%s//g<Left><Left>')
 
-vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeFindFileToggle<cr>', { silent = true })
-
 --Yank until end of line
 vim.keymap.set('n', 'Y', 'y$', { silent = true })
 

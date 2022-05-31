@@ -89,11 +89,13 @@ vim.opt.cursorline = true
 -- Write all buffers before navigating from vim to tmux
 vim.g['tmux_navigator_save_on_switch'] = 2
 
+-- Open files in current window
+vim.g.netrw_browse_split = 0
+
+-- Automatically close netrw buffer
+vim.g.netrw_fastbrowse = 0
+
 --Disable some builtins
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrwSettings = 1
-vim.g.loaded_netrwFileHandlers = 1
 vim.g.loaded_gzip = 1
 vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1

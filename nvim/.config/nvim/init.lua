@@ -16,7 +16,6 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
-  use 'kyazdani42/nvim-tree.lua' -- File browser
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -40,6 +39,7 @@ require('packer').startup(function(use)
   use 'rhysd/git-messenger.vim' -- Show git message below the cursor
   use { 'rrethy/vim-hexokinase', run = 'make hexokinase' } -- Show colors
   use 'romainl/vim-qf' -- Quickfix window improvements
+  use 'tpope/vim-vinegar' -- Quickfix window improvements
 end)
 
 require('options')
@@ -54,14 +54,12 @@ require('lualine').setup {
   },
   tabline = {
     lualine_a = { 'buffers' },
+    lualine_z = { 'tabs' },
   },
 }
 
 --Enable Comment.nvim
 require('Comment').setup()
-
---Enable file browser
-require 'nvim-tree'.setup()
 
 -- Hexokinase
 vim.g['Hexokinase_highlighters'] = { 'virtual' }
