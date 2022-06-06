@@ -1,6 +1,7 @@
 brew "asdf"
 brew "awscli"
 brew "bat"
+brew "coreutils"
 brew "ctags"
 brew "direnv"
 brew "duf"
