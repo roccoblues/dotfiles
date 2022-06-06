@@ -39,7 +39,7 @@ require('packer').startup(function(use)
   use 'rhysd/git-messenger.vim' -- Show git message below the cursor
   use { 'rrethy/vim-hexokinase', run = 'make hexokinase' } -- Show colors
   use 'romainl/vim-qf' -- Quickfix window improvements
-  use 'tpope/vim-vinegar' -- Quickfix window improvements
+  use 'tpope/vim-vinegar' -- Netrw window improvements
   -- Debugger
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
