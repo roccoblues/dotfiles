@@ -40,6 +40,10 @@ require('packer').startup(function(use)
   use { 'rrethy/vim-hexokinase', run = 'make hexokinase' } -- Show colors
   use 'romainl/vim-qf' -- Quickfix window improvements
   use 'tpope/vim-vinegar' -- Quickfix window improvements
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+  use 'leoluz/nvim-dap-go'
 end)
 
 require('options')
@@ -86,5 +90,19 @@ require('treesitter_config')
 
 -- LSP
 require('lsp_config')
+
+-- Debugger
+require('dap-go').setup()
+require('dapui').setup()
+local dap, dapui = require('dap'), require('dapui')
+dap.listeners.after.event_initialized['dapui_config'] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated['dapui_config'] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited['dapui_config'] = function()
+  dapui.close()
+end
 
 -- vim: ts=2 sts=2 sw=2 et

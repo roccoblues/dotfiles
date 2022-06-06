@@ -53,3 +53,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 vim.keymap.set('n', '<leader>cc', '<plug>(qf_qf_toggle)')
 vim.keymap.set('n', '<C-p>', '<Plug>(qf_qf_previous)zz', { silent = true })
 vim.keymap.set('n', '<C-n>', '<Plug>(qf_qf_next)zz', { silent = true })
+
+-- Debugger
+vim.keymap.set('n', '<F5>', require('dap').continue)
+vim.keymap.set('n', '<F6>', require('dap').step_over)
+vim.keymap.set('n', '<F7>', require('dap').step_into)
+vim.keymap.set('n', '<F8>', require('dap').step_out)
+vim.keymap.set('n', '<leader>b', require('dap').toggle_breakpoint)
+vim.keymap.set('n', 'dt', require('dap-go').debug_test)
+vim.keymap.set('n', 'de', require('dapui').eval)
