@@ -4,17 +4,45 @@ My personal dotfiles.
 
 ## Setup
 
+
+### Install pending software updates and developer tools
 ```
-# clone repo
+sudo softwareupdate -ia --verbose
+xcode-select --install
+```
+
+### Install Homebrew
+```
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+```
+
+### Clone repo
+```
 git clone https://github.com/roccoblues/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+```
 
-# install apps
+### Install apps
+```
 brew bundle
+```
 
-# set sane macOS defaults
+### Set sane MacOS defaults
+```
 ./set-macos-defaults.sh
+```
 
-# symlink dotfiles to the right places
+### Symlink dotfiles to the right places
+```
 ./install.sh
+```
+
+### Install asdf plugins
+```
+asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+asdf plugin-add yarn
+asdf plugin-add ruby
+asdf plugin-add python
 ```
