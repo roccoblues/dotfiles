@@ -11,7 +11,7 @@ local util = require('util')
 local augroup = vim.api.nvim_create_augroup('go_format', { clear = true })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '<buffer>',
+  pattern = "*.go",
   group = augroup,
   callback = function()
     util.org_imports(3000)
