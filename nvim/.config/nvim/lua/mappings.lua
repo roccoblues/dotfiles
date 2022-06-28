@@ -3,13 +3,12 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- <leader><leader> toggles between buffers
+vim.keymap.set('n', '<leader><leader>', '<c-^>')
+
 --Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
---Cycle through buffers
-vim.keymap.set('n', '<Tab>', '<cmd>bnext<cr>', { silent = true })
-vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<cr>', { silent = true })
 
 --Perform dot commands over visual blocks
 vim.keymap.set('v', '.', '<cmd>normal .<cr>')
@@ -45,8 +44,8 @@ vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv', { silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>k', vim.diagnostic.goto_prev)
-vim.keymap.set('n', '<leader>j', vim.diagnostic.goto_next)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- Quickfix window

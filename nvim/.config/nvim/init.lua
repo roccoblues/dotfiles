@@ -59,10 +59,6 @@ require('lualine').setup {
     globalstatus = true,
     theme = 'gruvbox',
   },
-  tabline = {
-    lualine_a = { 'buffers' },
-    lualine_z = { 'tabs' },
-  },
 }
 
 --Enable Comment.nvim
