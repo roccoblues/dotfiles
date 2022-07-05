@@ -41,6 +41,7 @@ require('packer').startup(function(use)
   use { 'rrethy/vim-hexokinase', run = 'make hexokinase' } -- Show colors
   use 'romainl/vim-qf' -- Quickfix window improvements
   use 'tpope/vim-vinegar' -- Netrw window improvements
+  use 'jparise/vim-graphql' -- GraphQL language support
   -- Debugger
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
