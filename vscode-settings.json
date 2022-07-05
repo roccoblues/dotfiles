@@ -65,5 +65,6 @@
         "files.eol": "\n"
     },
     "window.nativeFullScreen": false,
-    "files.trimFinalNewlines": true
+    "files.trimFinalNewlines": true,
+    "redhat.telemetry.enabled": false
 }
