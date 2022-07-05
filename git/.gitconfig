@@ -38,6 +38,7 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [pull]
 	rebase = false
+	ff = only
 [rebase]
 	autoStash = true
 [push]
