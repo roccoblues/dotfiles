@@ -66,5 +66,7 @@
     },
     "window.nativeFullScreen": false,
     "files.trimFinalNewlines": true,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "git.enableSmartCommit": true,
+    "git.enableStatusBarSync": false
 }
