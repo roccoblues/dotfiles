@@ -68,5 +68,6 @@
     "files.trimFinalNewlines": true,
     "redhat.telemetry.enabled": false,
     "git.enableSmartCommit": true,
-    "git.enableStatusBarSync": false
+    "git.enableStatusBarSync": false,
+    "git.confirmSync": false
 }
