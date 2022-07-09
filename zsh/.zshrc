@@ -77,8 +77,6 @@ alias dcu="docker compose up --build"
 alias dcd="docker compose down"
 alias dcb="docker compose build"
 alias ta="tmux attach"
-alias s="kitty +kitten ssh"
-alias kt="kitty-open-tab"
 
 # delete local branches who's remote ref is gone
 function gclean() {
