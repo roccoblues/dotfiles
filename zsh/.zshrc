@@ -13,6 +13,8 @@ export XDG_DATA_HOME=~/.local/share
 export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/asdfrc
 export ASDF_DATA_DIR=${XDG_DATA_HOME}/asdf
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export HOMEBREW_NO_AUTO_UPDATE=1 # stop brew install from update everything
+export HOMEBREW_NO_ENV_HINTS=1   # disable annoying hits
 
 bindkey -e
 
