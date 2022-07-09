@@ -37,6 +37,7 @@
     "git.autoStash": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.shellIntegration.enabled": true,
     "editor.cursorStyle": "line-thin",
     "shellcheck.customArgs": [
         "-x"
@@ -69,5 +70,6 @@
     "redhat.telemetry.enabled": false,
     "git.enableSmartCommit": true,
     "git.enableStatusBarSync": false,
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "git.mergeEditor": true
 }
