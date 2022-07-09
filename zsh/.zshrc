@@ -6,8 +6,8 @@ export PATH=$PATH:~/.local/bin/
 export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export K9SCONFIG=~/.k9s
 export AWS_DEFAULT_REGION=eu-central-1
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=vim
+export VISUAL=vim
 export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
 export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/asdfrc
@@ -62,7 +62,6 @@ alias bc="bc -ql"
 alias mkd="mkdir -pv"
 
 # other
-alias vim="nvim"
 alias ls="exa"
 alias ll='exa -bghla -sname --group-directories-first'
 alias tree='exa -sname --tree'
