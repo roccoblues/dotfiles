@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e -u -o pipefail
-
-width=${2:-80%}
-
-tmux popup -d '#{pane_current_path}' -xC -yC -w"$width" -h80% -E "${1:-zsh}" || true
