@@ -76,7 +76,6 @@ alias dps="docker ps"
 alias dcu="docker compose up --build"
 alias dcd="docker compose down"
 alias dcb="docker compose build"
-alias ta="tmux attach"
 
 # delete local branches who's remote ref is gone
 function gclean() {
@@ -173,23 +172,7 @@ source $(brew --prefix asdf)/libexec/asdf.sh
 # Source local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-# Use fzf for autocompletion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # enable syntax highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(starship init zsh)"
-
-# iterm2 shell integration
-# test -e "${HOME}/.iterm2/shell_integration.zsh" && source "${HOME}/.iterm2/shell_integration.zsh"
-
-# iterm2_print_user_vars() {
-#     local context=$(
-#         CTX=$(kubectl config current-context) 2>/dev/null
-#         if [ $? -eq 0 ]; then echo $CTX; fi
-#     )
-#     iterm2_set_user_var kubeContext $(echo "$context" | sed 's/.*cluster\///g')
-
-#     iterm2_set_user_var awsProfile "$AWS_PROFILE"
-# }
