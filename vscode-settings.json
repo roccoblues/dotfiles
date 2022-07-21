@@ -22,7 +22,10 @@
             "unusedparams": false,
             "unusedwrite": true,
             "useany": true
-        }
+        },
+        "codelenses": {
+            "gc_details": true  // Show a code lens toggling the display of gc's choices.
+          },
     },
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
