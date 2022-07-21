@@ -85,6 +85,15 @@ function gclean() {
     done
 }
 
+# perform garbage collection on all git repos in a given directory
+function gc-all-repos() {
+    local port=dir
+    for n in $(find $dir -name .git); do
+        cd ${n/%.git/}
+        git prune -v
+    done
+}
+
 function cdup() {
     cd "$(git rev-parse --show-toplevel)"
 }
