@@ -18,14 +18,15 @@
         "staticcheck":true,
         "analyses": {
             "nilness": true,
-            "shadow": true,
+            "shadow": false,
             "unusedparams": false,
             "unusedwrite": true,
+            "unusedvariable": true,
             "useany": true
         },
         "codelenses": {
-            "gc_details": true  // Show a code lens toggling the display of gc's choices.
-          },
+            "gc_details": true
+          }
     },
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
@@ -74,5 +75,8 @@
     "git.enableSmartCommit": true,
     "git.enableStatusBarSync": false,
     "git.confirmSync": false,
-    "git.mergeEditor": true
+    "git.mergeEditor": true,
+    "go.inlayHints.compositeLiteralFields": true,
+    "go.inlayHints.constantValues": true,
+    "go.inlayHints.functionTypeParameters": true
 }
