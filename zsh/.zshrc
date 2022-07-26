@@ -15,6 +15,7 @@ export ASDF_DATA_DIR=${XDG_DATA_HOME}/asdf
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_NO_AUTO_UPDATE=1 # stop brew install from update everything
 export HOMEBREW_NO_ENV_HINTS=1   # disable annoying hits
+export RUST_WITHOUT=rust-docs
 
 bindkey -e
 
