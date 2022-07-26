@@ -2,6 +2,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export PATH=$PATH:~/go/bin
+export PATH=$PATH:~/.cargo/bin
 export PATH=$PATH:~/.local/bin/
 export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export K9SCONFIG=~/.k9s
@@ -15,7 +16,6 @@ export ASDF_DATA_DIR=${XDG_DATA_HOME}/asdf
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_NO_AUTO_UPDATE=1 # stop brew install from update everything
 export HOMEBREW_NO_ENV_HINTS=1   # disable annoying hits
-export RUST_WITHOUT=rust-docs
 
 bindkey -e
 

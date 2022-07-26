@@ -42,8 +42,12 @@ brew bundle
 asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git
 asdf plugin-add yarn
 asdf plugin-add ruby
 asdf plugin-add python
+```
+
+### Install rust
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
