@@ -78,5 +78,7 @@
     "git.mergeEditor": true,
     "go.inlayHints.compositeLiteralFields": true,
     "go.inlayHints.constantValues": true,
-    "go.inlayHints.functionTypeParameters": true
+    "go.inlayHints.functionTypeParameters": true,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false
 }
