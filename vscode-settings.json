@@ -26,7 +26,7 @@
         },
         "codelenses": {
             "gc_details": true
-          }
+        }
     },
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
@@ -75,10 +75,5 @@
     "git.enableSmartCommit": true,
     "git.enableStatusBarSync": false,
     "git.confirmSync": false,
-    "git.mergeEditor": true,
-    "go.inlayHints.compositeLiteralFields": true,
-    "go.inlayHints.constantValues": true,
-    "go.inlayHints.functionTypeParameters": true,
-    "rust-analyzer.inlayHints.typeHints.enable": false,
-    "rust-analyzer.inlayHints.parameterHints.enable": false
+    "git.mergeEditor": true
 }
