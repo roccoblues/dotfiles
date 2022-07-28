@@ -15,7 +15,7 @@
         "formatting.gofumpt": true,
         "ui.semanticTokens": true,
         "usePlaceholders": true,
-        "staticcheck":true,
+        "staticcheck": true,
         "analyses": {
             "nilness": true,
             "shadow": false,
